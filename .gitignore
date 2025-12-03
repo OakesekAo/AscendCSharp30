@@ -1,0 +1,38 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.slnx
+
+# Rider
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+.packages/
+
+# dotnet watch
+.dotnet_watch/
+
+# Log files
+*.log
+
+# Test results
+TestResults/
+
+# Other
+*.vsix
+
+# Ignore index files that may be locked
+**/.vs/*/FileContentIndex/

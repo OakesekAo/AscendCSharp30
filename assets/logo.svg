@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <rect width="100%" height="100%" rx="24" fill="#0b5cff"/>
+  <text x="50%" y="48%" fill="#fff" font-family="Segoe UI, Arial" font-size="40" font-weight="600" text-anchor="middle">Ascend</text>
+  <text x="50%" y="68%" fill="#fff" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle">C# 30</text>
+</svg>
