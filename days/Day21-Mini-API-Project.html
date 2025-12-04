@@ -13,23 +13,25 @@
       
       
       
+        <link rel="prev" href="Day20-Advanced-LINQ.html">
       
-        <link rel="next" href="quickstart.html">
+      
+        <link rel="next" href="Day22-EF-Core-Basics.html">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>AscendCSharp30</title>
+        <title>Day 21 — Mini API Project - AscendCSharp30</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ascendcsharp30" class="md-skip">
+        <a href="#day21-starter-mini-api-project" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="AscendCSharp30" class="md-header__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
+    <a href="../index.html" title="AscendCSharp30" class="md-header__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Day 21 — Mini API Project
             
           </span>
         </div>
@@ -192,7 +194,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="AscendCSharp30" class="md-nav__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
+    <a href="../index.html" title="AscendCSharp30" class="md-nav__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -219,19 +221,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -247,7 +240,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -259,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quickstart.html" class="md-nav__link">
+      <a href="../quickstart.html" class="md-nav__link">
         
   
   
@@ -283,18 +275,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -315,7 +309,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -333,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day01-Setup-And-Tooling.html" class="md-nav__link">
+      <a href="Day01-Setup-And-Tooling.html" class="md-nav__link">
         
   
   
@@ -361,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day02-Types-And-Variables.html" class="md-nav__link">
+      <a href="Day02-Types-And-Variables.html" class="md-nav__link">
         
   
   
@@ -389,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day03-Control-Flow.html" class="md-nav__link">
+      <a href="Day03-Control-Flow.html" class="md-nav__link">
         
   
   
@@ -417,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day04-Collections.html" class="md-nav__link">
+      <a href="Day04-Collections.html" class="md-nav__link">
         
   
   
@@ -445,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day05-Methods-And-Parameters.html" class="md-nav__link">
+      <a href="Day05-Methods-And-Parameters.html" class="md-nav__link">
         
   
   
@@ -473,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day06-LINQ-Fundamentals.html" class="md-nav__link">
+      <a href="Day06-LINQ-Fundamentals.html" class="md-nav__link">
         
   
   
@@ -501,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day07-Mini-Console-Project.html" class="md-nav__link">
+      <a href="Day07-Mini-Console-Project.html" class="md-nav__link">
         
   
   
@@ -529,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day08-Classes-And-Objects.html" class="md-nav__link">
+      <a href="Day08-Classes-And-Objects.html" class="md-nav__link">
         
   
   
@@ -557,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day09-Interfaces-And-Abstraction.html" class="md-nav__link">
+      <a href="Day09-Interfaces-And-Abstraction.html" class="md-nav__link">
         
   
   
@@ -585,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day10-Inheritance-And-Polymorphism.html" class="md-nav__link">
+      <a href="Day10-Inheritance-And-Polymorphism.html" class="md-nav__link">
         
   
   
@@ -613,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day11-Error-Handling.html" class="md-nav__link">
+      <a href="Day11-Error-Handling.html" class="md-nav__link">
         
   
   
@@ -641,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day12-Async-And-Await.html" class="md-nav__link">
+      <a href="Day12-Async-And-Await.html" class="md-nav__link">
         
   
   
@@ -669,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day13-IO-And-JSON.html" class="md-nav__link">
+      <a href="Day13-IO-And-JSON.html" class="md-nav__link">
         
   
   
@@ -697,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day14-Service-Simulation-Project.html" class="md-nav__link">
+      <a href="Day14-Service-Simulation-Project.html" class="md-nav__link">
         
   
   
@@ -725,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day15-Dependency-Injection.html" class="md-nav__link">
+      <a href="Day15-Dependency-Injection.html" class="md-nav__link">
         
   
   
@@ -753,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day16-Options-Pattern-And-Config.html" class="md-nav__link">
+      <a href="Day16-Options-Pattern-And-Config.html" class="md-nav__link">
         
   
   
@@ -781,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day17-Logging.html" class="md-nav__link">
+      <a href="Day17-Logging.html" class="md-nav__link">
         
   
   
@@ -809,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day18-HttpClient.html" class="md-nav__link">
+      <a href="Day18-HttpClient.html" class="md-nav__link">
         
   
   
@@ -837,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day19-Clean-Architecture.html" class="md-nav__link">
+      <a href="Day19-Clean-Architecture.html" class="md-nav__link">
         
   
   
@@ -865,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day20-Advanced-LINQ.html" class="md-nav__link">
+      <a href="Day20-Advanced-LINQ.html" class="md-nav__link">
         
   
   
@@ -890,10 +884,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="days/Day21-Mini-API-Project.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="Day21-Mini-API-Project.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -909,6 +912,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -921,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day22-EF-Core-Basics.html" class="md-nav__link">
+      <a href="Day22-EF-Core-Basics.html" class="md-nav__link">
         
   
   
@@ -949,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day23-EF-Core-Advanced.html" class="md-nav__link">
+      <a href="Day23-EF-Core-Advanced.html" class="md-nav__link">
         
   
   
@@ -977,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day24-Unit-Testing.html" class="md-nav__link">
+      <a href="Day24-Unit-Testing.html" class="md-nav__link">
         
   
   
@@ -1005,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day25-Blazor-Components.html" class="md-nav__link">
+      <a href="Day25-Blazor-Components.html" class="md-nav__link">
         
   
   
@@ -1033,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day26-API-Integration.html" class="md-nav__link">
+      <a href="Day26-API-Integration.html" class="md-nav__link">
         
   
   
@@ -1061,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day27-Authentication.html" class="md-nav__link">
+      <a href="Day27-Authentication.html" class="md-nav__link">
         
   
   
@@ -1089,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day28-Deployment.html" class="md-nav__link">
+      <a href="Day28-Deployment.html" class="md-nav__link">
         
   
   
@@ -1117,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day29-Refactoring-And-Performance.html" class="md-nav__link">
+      <a href="Day29-Refactoring-And-Performance.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="days/Day30-Capstone.html" class="md-nav__link">
+      <a href="Day30-Capstone.html" class="md-nav__link">
         
   
   
@@ -1211,12 +1215,16 @@
   
 
 
-<h1 id="ascendcsharp30">AscendCSharp30</h1>
-<p>A 30-day, hands-on path to modern C# and .NET — daily focused practice and small projects.</p>
-<p>Ready to start? Jump to Day 1:</p>
-<p><a href="days/Day01-Setup-And-Tooling.html">Start Day 1 — Setup &amp; Tooling</a></p>
-<hr />
-<p>This site mirrors the repository and provides quick links to each day's starter content. For full repository content including complete solutions, see the <a href="https://github.com/OakesekAo/AscendCSharp30">GitHub repository</a>.</p>
+<h1 id="day21-starter-mini-api-project">Day21-Starter — Mini-API-Project</h1>
+<p>Objectives
+- Follow the daily learning objectives and complete the starter tasks.</p>
+<p>Starter steps
+1. Read the objectives.
+2. Open this folder in Visual Studio (<strong>Open Folder</strong> recommended) or open the provided project.
+3. Implement the exercises in this folder following the TODOs.</p>
+<p>Boilerplate
+- This folder contains minimal code and instructions to get started.
+- Do not commit build artifacts; keep only source and instructions.</p>
 
 
 
@@ -1266,10 +1274,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
