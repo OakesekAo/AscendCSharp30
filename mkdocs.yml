@@ -41,7 +41,7 @@ nav:
     - Day 30 — Capstone: days/Day30-Capstone.md
 repo_name: OakesekAo/AscendCSharp30
 repo_url: https://github.com/OakesekAo/AscendCSharp30
-use_directory_urls: true
+use_directory_urls: false
 plugins:
   - search
 
