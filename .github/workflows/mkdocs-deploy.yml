@@ -38,11 +38,16 @@ jobs:
             dest="docs/days/${day}.md"
             if [ -f "$src" ]; then
               cp "$src" "$dest"
+              echo "Copied: $src -> $dest"
             fi
           done
+          echo "Files in docs/days:"
+          ls -la docs/days/ || echo "docs/days is empty"
 
       - name: Build site
-        run: mkdocs build --clean
+        run: |
+          echo "Building MkDocs..."
+          mkdocs build --clean --verbose
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

@@ -3,41 +3,17 @@ site_description: "A 30-day, hands-on path to modern C# and .NET — daily focus
 site_author: OakesekAo
 theme:
   name: material
+docs_dir: docs
+site_dir: site
 nav:
   - Home: index.md
   - Quickstart: quickstart.md
-  - Days:
-    - Day 01 — Setup & Tooling: days/Day01-Setup-And-Tooling.md
-    - Day 02 — Types & Variables: days/Day02-Types-And-Variables.md
-    - Day 03 — Control Flow: days/Day03-Control-Flow.md
-    - Day 04 — Collections: days/Day04-Collections.md
-    - Day 05 — Methods & Parameters: days/Day05-Methods-And-Parameters.md
-    - Day 06 — LINQ Fundamentals: days/Day06-LINQ-Fundamentals.md
-    - Day 07 — Mini Console Project: days/Day07-Mini-Console-Project.md
-    - Day 08 — Classes & Objects: days/Day08-Classes-And-Objects.md
-    - Day 09 — Interfaces & Abstraction: days/Day09-Interfaces-And-Abstraction.md
-    - Day 10 — Inheritance & Polymorphism: days/Day10-Inheritance-And-Polymorphism.md
-    - Day 11 — Error Handling: days/Day11-Error-Handling.md
-    - Day 12 — Async & Await: days/Day12-Async-And-Await.md
-    - Day 13 — IO & JSON: days/Day13-IO-And-JSON.md
-    - Day 14 — Service Simulation Project: days/Day14-Service-Simulation-Project.md
-    - Day 15 — Dependency Injection: days/Day15-Dependency-Injection.md
-    - Day 16 — Options Pattern & Config: days/Day16-Options-Pattern-And-Config.md
-    - Day 17 — Logging: days/Day17-Logging.md
-    - Day 18 — HttpClient: days/Day18-HttpClient.md
-    - Day 19 — Clean Architecture: days/Day19-Clean-Architecture.md
-    - Day 20 — Advanced LINQ: days/Day20-Advanced-LINQ.md
-    - Day 21 — Mini API Project: days/Day21-Mini-API-Project.md
-    - Day 22 — EF Core Basics: days/Day22-EF-Core-Basics.md
-    - Day 23 — EF Core Advanced: days/Day23-EF-Core-Advanced.md
-    - Day 24 — Unit Testing: days/Day24-Unit-Testing.md
-    - Day 25 — Blazor Components: days/Day25-Blazor-Components.md
-    - Day 26 — API Integration: days/Day26-API-Integration.md
-    - Day 27 — Authentication: days/Day27-Authentication.md
-    - Day 28 — Deployment: days/Day28-Deployment.md
-    - Day 29 — Refactoring & Performance: days/Day29-Refactoring-And-Performance.md
-    - Day 30 — Capstone: days/Day30-Capstone.md
+  - Days: days/
 repo_name: OakesekAo/AscendCSharp30
 repo_url: https://github.com/OakesekAo/AscendCSharp30
 use_directory_urls: true
+plugins:
+  - search
+
+
 
