@@ -15,10 +15,12 @@ count = 0
 for day_folder in sorted(days_dir.glob("Day*")):
     if not day_folder.is_dir():
         continue
-    
+
     day_name = day_folder.name
-    starter_readme = day_folder / f"{day_name}-Starter" / "README.md"
-    
+    # Extract just the day number (e.g., "Day01" from "Day01-Setup-And-Tooling")
+    day_num = day_name.split("-")[0]
+    starter_readme = day_folder / f"{day_num}-Starter" / "README.md"
+
     if starter_readme.exists():
         dest = docs_days / f"{day_name}.md"
         shutil.copy2(starter_readme, dest)
