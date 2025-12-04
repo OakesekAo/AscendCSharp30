@@ -111,5 +111,18 @@ After you complete the Starter guide and create your own version, compare it to 
 
 ---
 
+## Summary
+
+This complete example demonstrates:
+- How to structure a C# console application
+- Variable declaration and usage (string, int, double, bool)
+- String interpolation for clean, readable output
+- DateTime formatting for displaying dates and times
+- Basic arithmetic operations
+
+**Use this as a reference:** After you complete the Starter guide on your local machine, compare your `Program.cs` to this example. You should understand each line and see similar output.
+
+---
+
 **Congratulations!** Day 01 is complete. Tomorrow: **Types & Variables**. 🚀
 
