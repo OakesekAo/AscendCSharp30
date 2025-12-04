@@ -31,23 +31,15 @@ jobs:
 
       - name: Copy Day starter READMEs into docs
         run: |
-          mkdir -p docs/days
-          for d in days/Day*/; do
-            day=$(basename "$d")
-            src="$d/${day}-Starter/README.md"
-            dest="docs/days/${day}.md"
-            if [ -f "$src" ]; then
-              cp "$src" "$dest"
-              echo "Copied: $src -> $dest"
-            fi
-          done
-          echo "Files in docs/days:"
-          ls -la docs/days/ || echo "docs/days is empty"
+          python3 scripts/copy_days_to_docs.py
 
       - name: Build site
         run: |
           echo "Building MkDocs..."
           mkdocs build --clean --verbose
+          echo ""
+          echo "Files in site/days/:"
+          ls -la site/days/ || echo "No days folder in site"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
