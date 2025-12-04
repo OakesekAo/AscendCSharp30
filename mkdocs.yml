@@ -1,0 +1,11 @@
+site_name: AscendCSharp30
+site_description: "A 30-day, hands-on path to modern C# and .NET — daily focused practice and small projects."
+site_author: OakesekAo
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+repo_name: OakesekAo/AscendCSharp30
+repo_url: https://github.com/OakesekAo/AscendCSharp30
+use_directory_urls: true
