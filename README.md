@@ -138,10 +138,4 @@ You get a predictable, progressive, hands-on learning journey that results in so
 
 MIT — feel free to learn, modify, and build on this journey.
 
----
 
-If you'd like, I can generate:
-- A folder scaffold (`Day01` → `Day30`)
-- A CONTRIBUTING.md
-- Issue templates
-- A GitHub Projects board  
