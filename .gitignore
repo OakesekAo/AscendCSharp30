@@ -2,6 +2,10 @@
 bin/
 obj/
 
+# MkDocs and GitHub Pages generated files
+docs/days/
+site/
+
 # Visual Studio temporary files, build results, and
 # user-specific files
 .vs/
@@ -36,3 +40,4 @@ TestResults/
 
 # Ignore index files that may be locked
 **/.vs/*/FileContentIndex/
+
