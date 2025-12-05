@@ -517,6 +517,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 4: Create Your First Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opening-a-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening a Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -543,10 +571,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-files-folders" class="md-nav__link">
+  <a href="#key-files-folders-in-your-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Files &amp; Folders:
+        Key Files &amp; Folders in Your Project:
       
     </span>
   </a>
@@ -1620,6 +1648,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 4: Create Your First Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opening-a-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening a Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1646,10 +1702,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-files-folders" class="md-nav__link">
+  <a href="#key-files-folders-in-your-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Files &amp; Folders:
+        Key Files &amp; Folders in Your Project:
       
     </span>
   </a>
@@ -1835,10 +1891,33 @@ chmod +x dotnet-install.sh
 <p><strong>For this course, we recommend VS Code or Visual Studio Community.</strong></p>
 <hr />
 <h2 id="step-4-create-your-first-project">Step 4: Create Your First Project</h2>
-<p>Open a terminal and create a new folder for your Day 01 work:</p>
+<p>First, <strong>open a terminal</strong> in your code editor or operating system.</p>
+<h3 id="opening-a-terminal">Opening a Terminal</h3>
+<p><strong>If using VS Code:</strong>
+1. Open VS Code
+2. At the top menu, click <strong>Terminal</strong> → <strong>New Terminal</strong>
+   - Or press <strong>Ctrl + `` (Ctrl + Backtick)</strong>
+3. A terminal panel will appear at the bottom of your screen</p>
+<p><strong>If using Visual Studio 2022/2025:</strong>
+1. Open Visual Studio
+2. At the top menu, click <strong>Tools</strong> → <strong>Command Line</strong> → <strong>Developer PowerShell</strong>
+   - Or press <strong>Ctrl + Alt + `` (Ctrl + Alt + Backtick)</strong>
+3. A PowerShell window will open</p>
+<p><strong>If using Windows (without an editor open):</strong>
+1. Press <strong>Windows Key + R</strong>
+2. Type <code>powershell</code> or <code>cmd</code>
+3. Press Enter
+4. A terminal window will open</p>
+<p><strong>If using macOS/Linux:</strong>
+1. Open Terminal or your preferred shell
+2. You'll have a command prompt ready</p>
+<hr />
+<h3 id="create-the-project">Create the Project</h3>
+<p>In your terminal, run these commands:</p>
 <pre><code class="language-bash">mkdir Day01-FirstApp
 cd Day01-FirstApp
 </code></pre>
+<p>This creates a new folder called <code>Day01-FirstApp</code> and moves into it.</p>
 <p>Now create a new console project:</p>
 <pre><code class="language-bash">dotnet new console
 </code></pre>
@@ -1847,23 +1926,45 @@ cd Day01-FirstApp
 - <code>Day01-FirstApp.csproj</code> — project configuration
 - <code>bin/</code> — compiled output (created later)
 - <code>obj/</code> — temporary build files (created later)</p>
+<p>You should see output in the terminal like:</p>
+<pre><code>The template &quot;Console App&quot; was created successfully.
+
+Processing post-creation actions...
+Restoring C:\Users\YourName\Day01-FirstApp\Day01-FirstApp.csproj:
+  Determining projects to restore...
+  Restored C:\Users\YourName\Day01-FirstApp\Day01-FirstApp.csproj (in 2.34 sec)
+</code></pre>
 <hr />
 <h2 id="step-5-run-your-first-program">Step 5: Run Your First Program</h2>
-<p>In the same folder, run:</p>
+<p>You're still in the terminal in the <code>Day01-FirstApp</code> folder. Now run:</p>
 <pre><code class="language-bash">dotnet run
 </code></pre>
-<p>You should see:</p>
+<p>You should see output in the terminal:</p>
 <pre><code>Hello, World!
 </code></pre>
 <p><strong>Congratulations!</strong> You just ran your first C# program! 🎉</p>
+<p>The <code>dotnet run</code> command:
+1. Compiles your <code>Program.cs</code> code
+2. Runs the compiled program
+3. Displays the output (<code>Hello, World!</code>)</p>
 <hr />
 <h2 id="step-6-explore-the-project-structure">Step 6: Explore the Project Structure</h2>
-<p>Open the <code>Program.cs</code> file in your editor. It looks like:</p>
+<p>Now <strong>open the <code>Day01-FirstApp</code> folder in your code editor.</strong></p>
+<p><strong>In VS Code:</strong>
+1. File → Open Folder
+2. Navigate to and select your <code>Day01-FirstApp</code> folder
+3. Click Select Folder</p>
+<p><strong>In Visual Studio:</strong>
+1. File → Open → Folder
+2. Navigate to and select your <code>Day01-FirstApp</code> folder
+3. Click Select Folder</p>
+<p>Once open, you'll see the folder structure on the left. Click on <code>Program.cs</code> to open it.</p>
+<p>The file contains:</p>
 <pre><code class="language-csharp">// See https://aka.ms/new-console-template for more information
 Console.WriteLine(&quot;Hello, World!&quot;);
 </code></pre>
 <p>This is your <strong>entry point</strong> — the code that runs when you execute <code>dotnet run</code>.</p>
-<h3 id="key-files-folders">Key Files &amp; Folders:</h3>
+<h3 id="key-files-folders-in-your-project">Key Files &amp; Folders in Your Project:</h3>
 <table>
 <thead>
 <tr>
@@ -1874,19 +1975,19 @@ Console.WriteLine(&quot;Hello, World!&quot;);
 <tbody>
 <tr>
 <td><code>Program.cs</code></td>
-<td>Your C# source code</td>
+<td>Your C# source code — this is what you edit</td>
 </tr>
 <tr>
 <td><code>Day01-FirstApp.csproj</code></td>
-<td>Project metadata (name, target framework, dependencies)</td>
+<td>Project metadata (name, target framework, dependencies) — don't edit this yet</td>
 </tr>
 <tr>
 <td><code>bin/</code></td>
-<td>Compiled executable and dependencies</td>
+<td>Compiled executable and dependencies (created after <code>dotnet run</code>)</td>
 </tr>
 <tr>
 <td><code>obj/</code></td>
-<td>Temporary build artifacts</td>
+<td>Temporary build files (created during compilation)</td>
 </tr>
 <tr>
 <td><code>.gitignore</code></td>
@@ -1924,10 +2025,24 @@ dotnet --info
 Today is 12/4/2025 2:45:13 PM
 </code></pre>
 <p><strong>Steps:</strong>
-1. Open <code>Program.cs</code> in your editor
-2. Replace the <code>Hello, World!</code> line with your own code
-3. Run <code>dotnet run</code> to test
-4. Experiment! Try adding more lines, different text, etc.</p>
+1. In your editor, open <code>Program.cs</code>
+2. Delete or comment out the current <code>Console.WriteLine("Hello, World!");</code> line
+3. Write new code to:
+   - Print a greeting with your name
+   - Print the current date using <code>DateTime.Now</code>
+4. Save the file (Ctrl+S or Cmd+S)
+5. In the terminal, run <code>dotnet run</code> again
+6. You should see your custom output!</p>
+<p><strong>Example code to get you started:</strong></p>
+<pre><code class="language-csharp">string name = &quot;Alex&quot;;
+Console.WriteLine($&quot;Hello, I'm {name}!&quot;);
+Console.WriteLine($&quot;Today is {DateTime.Now}&quot;);
+</code></pre>
+<p><strong>Extra challenges (if you want to go further):</strong>
+- Format the date nicely: <code>{DateTime.Now:MMMM d, yyyy}</code>
+- Format the time: <code>{DateTime.Now:h:mm tt}</code>
+- Add more lines about yourself
+- Store your age in a variable and print it</p>
 <hr />
 <h2 id="checklist-youve-completed-day-01-if">✅ Checklist: You've Completed Day 01 If...</h2>
 <ul>
