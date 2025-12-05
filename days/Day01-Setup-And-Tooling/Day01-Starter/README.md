@@ -101,12 +101,44 @@ You have three main options:
 
 ## Step 4: Create Your First Project
 
-Open a terminal and create a new folder for your Day 01 work:
+First, **open a terminal** in your code editor or operating system.
+
+### Opening a Terminal
+
+**If using VS Code:**
+1. Open VS Code
+2. At the top menu, click **Terminal** → **New Terminal**
+   - Or press **Ctrl + `` (Ctrl + Backtick)**
+3. A terminal panel will appear at the bottom of your screen
+
+**If using Visual Studio 2022/2025:**
+1. Open Visual Studio
+2. At the top menu, click **Tools** → **Command Line** → **Developer PowerShell**
+   - Or press **Ctrl + Alt + `` (Ctrl + Alt + Backtick)**
+3. A PowerShell window will open
+
+**If using Windows (without an editor open):**
+1. Press **Windows Key + R**
+2. Type `powershell` or `cmd`
+3. Press Enter
+4. A terminal window will open
+
+**If using macOS/Linux:**
+1. Open Terminal or your preferred shell
+2. You'll have a command prompt ready
+
+---
+
+### Create the Project
+
+In your terminal, run these commands:
 
 ```bash
 mkdir Day01-FirstApp
 cd Day01-FirstApp
 ```
+
+This creates a new folder called `Day01-FirstApp` and moves into it.
 
 Now create a new console project:
 
@@ -120,28 +152,57 @@ This creates:
 - `bin/` — compiled output (created later)
 - `obj/` — temporary build files (created later)
 
+You should see output in the terminal like:
+```
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring C:\Users\YourName\Day01-FirstApp\Day01-FirstApp.csproj:
+  Determining projects to restore...
+  Restored C:\Users\YourName\Day01-FirstApp\Day01-FirstApp.csproj (in 2.34 sec)
+```
+
 ---
 
 ## Step 5: Run Your First Program
 
-In the same folder, run:
+You're still in the terminal in the `Day01-FirstApp` folder. Now run:
 
 ```bash
 dotnet run
 ```
 
-You should see:
+You should see output in the terminal:
 ```
 Hello, World!
 ```
 
 **Congratulations!** You just ran your first C# program! 🎉
 
+The `dotnet run` command:
+1. Compiles your `Program.cs` code
+2. Runs the compiled program
+3. Displays the output (`Hello, World!`)
+
 ---
 
 ## Step 6: Explore the Project Structure
 
-Open the `Program.cs` file in your editor. It looks like:
+Now **open the `Day01-FirstApp` folder in your code editor.**
+
+**In VS Code:**
+1. File → Open Folder
+2. Navigate to and select your `Day01-FirstApp` folder
+3. Click Select Folder
+
+**In Visual Studio:**
+1. File → Open → Folder
+2. Navigate to and select your `Day01-FirstApp` folder
+3. Click Select Folder
+
+Once open, you'll see the folder structure on the left. Click on `Program.cs` to open it.
+
+The file contains:
 
 ```csharp
 // See https://aka.ms/new-console-template for more information
@@ -150,14 +211,14 @@ Console.WriteLine("Hello, World!");
 
 This is your **entry point** — the code that runs when you execute `dotnet run`.
 
-### Key Files & Folders:
+### Key Files & Folders in Your Project:
 
 | File/Folder | Purpose |
 |---|---|
-| `Program.cs` | Your C# source code |
-| `Day01-FirstApp.csproj` | Project metadata (name, target framework, dependencies) |
-| `bin/` | Compiled executable and dependencies |
-| `obj/` | Temporary build artifacts |
+| `Program.cs` | Your C# source code — this is what you edit |
+| `Day01-FirstApp.csproj` | Project metadata (name, target framework, dependencies) — don't edit this yet |
+| `bin/` | Compiled executable and dependencies (created after `dotnet run`) |
+| `obj/` | Temporary build files (created during compilation) |
 | `.gitignore` | Files to ignore in Git |
 
 ---
@@ -201,10 +262,27 @@ Today is 12/4/2025 2:45:13 PM
 ```
 
 **Steps:**
-1. Open `Program.cs` in your editor
-2. Replace the `Hello, World!` line with your own code
-3. Run `dotnet run` to test
-4. Experiment! Try adding more lines, different text, etc.
+1. In your editor, open `Program.cs`
+2. Delete or comment out the current `Console.WriteLine("Hello, World!");` line
+3. Write new code to:
+   - Print a greeting with your name
+   - Print the current date using `DateTime.Now`
+4. Save the file (Ctrl+S or Cmd+S)
+5. In the terminal, run `dotnet run` again
+6. You should see your custom output!
+
+**Example code to get you started:**
+```csharp
+string name = "Alex";
+Console.WriteLine($"Hello, I'm {name}!");
+Console.WriteLine($"Today is {DateTime.Now}");
+```
+
+**Extra challenges (if you want to go further):**
+- Format the date nicely: `{DateTime.Now:MMMM d, yyyy}`
+- Format the time: `{DateTime.Now:h:mm tt}`
+- Add more lines about yourself
+- Store your age in a variable and print it
 
 ---
 
