@@ -31,6 +31,69 @@ Before you start:
 
 ---
 
+## Setup: Create Your Day 02 Project
+
+Remember yesterday? You created a new folder, moved into it, and ran `dotnet new console`. We're doing the same thing today!
+
+### Step 0: Open a Terminal
+
+Just like Day 01, open a terminal in your editor or operating system:
+
+**If using VS Code:**
+1. Open VS Code
+2. At the top menu, click **Terminal** → **New Terminal**
+   - Or press **Ctrl + ` (Ctrl + Backtick)**
+3. A terminal panel will appear at the bottom
+
+**If using Visual Studio:**
+1. Open Visual Studio
+2. At the top menu, click **Tools** → **Command Line** → **Developer PowerShell**
+   - Or press **Ctrl + Alt + ` (Ctrl + Alt + Backtick)**
+3. A PowerShell window will open
+
+**If using Windows (without an editor):**
+1. Press **Windows Key + R**
+2. Type `powershell`
+3. Press Enter
+
+**If using macOS/Linux:**
+1. Open Terminal
+
+---
+
+### Step 1: Create Your Day 02 Project Folder
+
+In your terminal, run:
+
+```bash
+mkdir Day02-Profile
+cd Day02-Profile
+```
+
+This creates a new folder called `Day02-Profile` and moves you into it.
+
+---
+
+### Step 2: Create a New Console Project
+
+```bash
+dotnet new console
+```
+
+You should see output like:
+```
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring C:\Users\YourName\Day02-Profile\Day02-Profile.csproj:
+  Determining projects to restore...
+  Restored C:\Users\YourName\Day02-Profile\Day02-Profile.csproj (in 2.34 sec)
+```
+
+Great! Your project is created. Now you're ready to learn about types and variables.
+
+---
+
 ## Step 1: Understanding Data Types
 
 C# has different **data types** for different kinds of data:
@@ -170,12 +233,13 @@ Salary with 10% raise: $55,000.00
 ```
 
 **Steps to build it:**
-1. Create a new console project: `dotnet new console -n Day02-Profile`
-2. Use `Console.Write()` to ask for name, age, salary
-3. Use `Console.ReadLine()` to get each input
-4. Convert the strings to `int` and `double` with `int.Parse()` and `double.Parse()`
-5. Calculate the new age and new salary
-6. Display everything with string interpolation
+1. Open the `Program.cs` file in your `Day02-Profile` folder
+2. Clear out the default code
+3. Use `Console.Write()` to ask for name, age, salary
+4. Use `Console.ReadLine()` to get each input
+5. Convert the strings to `int` and `double` with `int.Parse()` and `double.Parse()`
+6. Calculate the new age and new salary
+7. Display everything with string interpolation
 
 **Hints:**
 ```csharp
@@ -192,8 +256,27 @@ double raisedSalary = currentSalary * 1.10;
 
 ---
 
+## Step 7: Test Your Program
+
+Once you've written your code in `Program.cs`, test it:
+
+```bash
+dotnet run
+```
+
+Your program should prompt you for name, age, and salary, then display the results. Try it a few times with different inputs!
+
+If you get errors, check:
+- Did you use `Console.Write()` for prompts and `Console.ReadLine()` for input?
+- Did you convert strings to int/double with `int.Parse()` and `double.Parse()`?
+- Did you use the right format specifier `:F2` for money?
+
+
+---
+
 ## ✅ Checklist: You've Completed Day 02 If...
 
+- [ ] You created the `Day02-Profile` folder and ran `dotnet new console`
 - [ ] You understand what int, string, double, and bool are
 - [ ] You can declare variables with proper syntax
 - [ ] You can get user input with `Console.ReadLine()`
@@ -201,7 +284,7 @@ double raisedSalary = currentSalary * 1.10;
 - [ ] You can do calculations with different types
 - [ ] You can format numbers (especially money with `:F2`)
 - [ ] You completed the mini challenge (profile calculator)
-- [ ] Your program runs without errors and shows all outputs
+- [ ] Your program runs with `dotnet run` and shows all outputs correctly
 
 ---
 
