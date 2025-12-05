@@ -37,7 +37,7 @@ The .NET SDK includes everything you need to build and run C# applications.
 
 ### Option A: Official Installer (Recommended for Beginners)
 
-1. Go to [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download){target="_blank"}
+1. Go to <a href="https://dotnet.microsoft.com/download" target="_blank">https://dotnet.microsoft.com/download</a>
 2. Select **.NET 10** (the latest LTS or current release)
 3. Download the **SDK** (not just the Runtime)
 4. Run the installer and follow the prompts
@@ -81,17 +81,17 @@ If you see a version number, you're good! If not, restart your terminal or reins
 You have three main options:
 
 ### **Option A: Visual Studio Code (Lightweight, Free)**
-- Download: [https://code.visualstudio.com](https://code.visualstudio.com){target="_blank"}
+- Download: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a>
 - Install the **C# DevKit** extension from the VS Code Marketplace
 - Fast, customizable, great for learning
 
 ### **Option B: Visual Studio Community (Full IDE, Free)**
-- Download: [https://visualstudio.microsoft.com/vs/community/](https://visualstudio.microsoft.com/vs/community/){target="_blank"}
+- Download: <a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">https://visualstudio.microsoft.com/vs/community/</a>
 - During installation, select **.NET Desktop Development** workload
 - More features, larger download, great if you already use it
 
 ### **Option C: JetBrains Rider (Professional, Paid)**
-- Download: [https://www.jetbrains.com/rider/](https://www.jetbrains.com/rider/){target="_blank"}
+- Download: <a href="https://www.jetbrains.com/rider/" target="_blank">https://www.jetbrains.com/rider/</a>
 - Free 30-day trial
 - Excellent IDE, but not required for this course
 
@@ -253,8 +253,8 @@ If you finish early and want to explore more:
    ```
 
 4. **Read the official docs:**
-- [Getting Started with .NET](https://learn.microsoft.com/en-us/dotnet/core/get-started){target="_blank"}
-- [C# Basics](https://learn.microsoft.com/en-us/dotnet/csharp/){target="_blank"}
+- <a href="https://learn.microsoft.com/en-us/dotnet/core/get-started" target="_blank">Getting Started with .NET</a>
+- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank">C# Basics</a>
 
 ---
 
