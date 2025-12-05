@@ -1,56 +1,37 @@
 using System;
 
-// ============================================================================
 // Day 01 — Setup & Tooling: Complete Example
-// ============================================================================
-// This program demonstrates:
-// - Console output using Console.WriteLine()
-// - Variable declaration and assignment
-// - String interpolation
-// - Working with DateTime
-// - Basic comments and code structure
-// ============================================================================
+// Demonstrates: Console output, variables, string interpolation, and DateTime
 
 // Step 1: Print a welcome message
 Console.WriteLine("=== Welcome to AscendCSharp30 ===\n");
 
-// Step 2: Declare and use string variables
-string courseName = "AscendCSharp30";
-string dayTitle = "Setup & Tooling";
-int dayNumber = 1;
+// Step 2: Declare and use variables
+string name = "Developer";
+Console.WriteLine($"Hello, I'm {name}!");
 
-// Print course info using string interpolation (the $ prefix allows {variable} syntax)
-Console.WriteLine($"Course: {courseName}");
-Console.WriteLine($"Day {dayNumber}: {dayTitle}\n");
-
-// Step 3: Get and display the current date and time
+// Step 3: Display the current date and time
 DateTime now = DateTime.Now;
-Console.WriteLine($"Started on: {now.DayOfWeek}, {now:MMMM d, yyyy} at {now:h:mm tt}");
-Console.WriteLine();
+Console.WriteLine($"Today is {now:MMMM d, yyyy} at {now:h:mm tt}\n");
 
-// Step 4: Demonstrate basic variable types
-// Integer: whole numbers
+// Step 4: Demonstrate different variable types
 int totalDays = 30;
-Console.WriteLine($"Total days in course: {totalDays}");
-
-// Double: decimal numbers
 double hoursPerDay = 1.5;
-Console.WriteLine($"Estimated time per day: {hoursPerDay} hours");
-
-// Boolean: true/false
 bool isSetupComplete = true;
-Console.WriteLine($"Environment setup complete: {isSetupComplete}");
-Console.WriteLine();
+
+Console.WriteLine($"Course: 30 days of C#");
+Console.WriteLine($"Hours per day: {hoursPerDay}");
+Console.WriteLine($"Setup complete: {isSetupComplete}\n");
 
 // Step 5: Simple calculation
-int daysRemaining = totalDays - dayNumber;
-double totalEstimatedHours = totalDays * hoursPerDay;
-Console.WriteLine($"Days remaining: {daysRemaining}");
-Console.WriteLine($"Total estimated course time: {totalEstimatedHours} hours\n");
+int daysRemaining = totalDays - 1;
+double totalHours = totalDays * hoursPerDay;
 
-// Step 6: Print a closing message
-Console.WriteLine("=== You're Ready! ===");
-Console.WriteLine("Your development environment is set up and working.");
-Console.WriteLine("Tomorrow you'll learn about Types and Variables in depth.");
-Console.WriteLine("\nGood luck on your 30-day journey! 🚀");
+Console.WriteLine($"Days remaining: {daysRemaining}");
+Console.WriteLine($"Total hours: {totalHours}\n");
+
+// Step 6: Closing message
+Console.WriteLine("Your environment is ready!");
+Console.WriteLine("See you on Day 02! 🚀");
+
 
