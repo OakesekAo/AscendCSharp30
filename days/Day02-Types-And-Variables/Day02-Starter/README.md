@@ -193,7 +193,7 @@ double salary = double.Parse(Console.ReadLine());
 double salaryWithRaise = salary * 1.10;  // 10% raise
 
 // Display
-Console.WriteLine($"New salary: ${salaryWithRaise:F2}");
+Console.WriteLine($"New salary: ${salaryWithRaise:N2}");
 ```
 
 The `:N2` format means "show 2 decimal places with thousand separators (commas)" — perfect for money and large numbers.
