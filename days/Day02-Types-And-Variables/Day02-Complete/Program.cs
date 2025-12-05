@@ -26,8 +26,8 @@ Console.WriteLine("\n=== Your Information ===");
 Console.WriteLine($"Name: {name}");
 Console.WriteLine($"Current Age: {age}");
 Console.WriteLine($"Age in 10 years: {ageIn10Years}");
-Console.WriteLine($"Current Salary: ${salary:F2}");
-Console.WriteLine($"Salary with 10% raise: ${salaryWithRaise:F2}");
+Console.WriteLine($"Current Salary: ${salary:N2}");
+Console.WriteLine($"Salary with 10% raise: ${salaryWithRaise:N2}");
 Console.WriteLine();
 
 // Bonus: Show what we learned

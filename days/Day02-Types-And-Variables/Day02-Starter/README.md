@@ -196,7 +196,7 @@ double salaryWithRaise = salary * 1.10;  // 10% raise
 Console.WriteLine($"New salary: ${salaryWithRaise:F2}");
 ```
 
-The `:F2` format means "show 2 decimal places" (like money).
+The `:N2` format means "show 2 decimal places with thousand separators (commas)" — perfect for money and large numbers.
 
 ---
 
@@ -246,8 +246,8 @@ Salary with 10% raise: $55,000.00
 // Convert and get in one line
 int age = int.Parse(Console.ReadLine());
 
-// Format money with 2 decimals
-Console.WriteLine($"Salary: ${salary:F2}");
+// Format money with 2 decimals and commas
+Console.WriteLine($"Salary: ${salary:N2}");
 
 // Do math
 int futureAge = currentAge + 10;
@@ -282,7 +282,7 @@ If you get errors, check:
 - [ ] You can get user input with `Console.ReadLine()`
 - [ ] You can convert strings to int and double with `Parse()`
 - [ ] You can do calculations with different types
-- [ ] You can format numbers (especially money with `:F2`)
+- [ ] You can format numbers (especially money with `:N2` for commas or `:C` for currency)
 - [ ] You completed the mini challenge (profile calculator)
 - [ ] Your program runs with `dotnet run` and shows all outputs correctly
 
@@ -321,7 +321,7 @@ If you finish early:
 
 4. **Read the official docs:**
    - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/" target="_blank">C# Data Types</a>
-   - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/variables/how-to-parse-strings-using-parse" target="_blank">Parsing Strings</a>
+   - <a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/parsing-strings" target="_blank">Parsing Strings</a>
 
 ---
 

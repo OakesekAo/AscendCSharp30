@@ -71,9 +71,9 @@ Perform math with variables of different types.
 
 ### 5. **String Interpolation with Formatting**
 ```csharp
-Console.WriteLine($"Current Salary: ${salary:F2}");
+Console.WriteLine($"Current Salary: ${salary:N2}");
 ```
-The `:F2` format specifier shows 2 decimal places (perfect for money).
+The `:N2` format specifier shows 2 decimal places with thousand separators (perfect for money).
 
 ### 6. **Bonus: Checking Types**
 ```csharp
