@@ -1,13 +1,268 @@
-﻿# Day02-Starter — Types-And-Variables
+# Day 02 — Types & Variables
 
-Objectives
-- Follow the daily learning objectives and complete the starter tasks.
+Welcome to Day 2! Today you'll learn about **data types** and **variables** — the fundamental building blocks for storing and working with data in C#.
 
-Starter steps
-1. Read the objectives.
-2. Open this folder in Visual Studio (__Open Folder__ recommended) or open the provided project.
-3. Implement the exercises in this folder following the TODOs.
+By the end of this day, you will have:
+- ✅ Understood C# data types (int, string, double, bool)
+- ✅ Declared and used variables properly
+- ✅ Retrieved user input from the console
+- ✅ Converted between different types
+- ✅ Performed calculations with different data types
 
-Boilerplate
-- This folder contains minimal code and instructions to get started.
-- Do not commit build artifacts; keep only source and instructions.
+---
+
+## 🎯 Learning Objectives
+
+1. **Understand data types** — What they are and when to use each one
+2. **Declare variables** — Using `type name = value;` syntax
+3. **Get user input** — Using `Console.ReadLine()`
+4. **Convert types** — String to int, string to double, etc.
+5. **Perform calculations** — With different numeric types
+6. **Display results** — Using string interpolation with formatting
+
+---
+
+## 📋 Prerequisites
+
+Before you start:
+- Day 01 completed (comfortable with `Console.WriteLine()` and basic syntax)
+- Your editor (VS Code or Visual Studio) open and ready
+- ~60 minutes of uninterrupted time
+
+---
+
+## Step 1: Understanding Data Types
+
+C# has different **data types** for different kinds of data:
+
+| Type | Purpose | Examples |
+|------|---------|----------|
+| `int` | Whole numbers | 25, -10, 1000 |
+| `double` | Decimal numbers | 5.9, 3.14, -2.5 |
+| `string` | Text | "Alex", "Hello World" |
+| `bool` | True/False | true, false |
+| `decimal` | Money/precise decimals | 19.99, 100.50 |
+
+Each type is designed for a specific purpose. Using the right type matters!
+
+---
+
+## Step 2: Declaring Variables
+
+A **variable** is a container that holds a value. You declare variables like this:
+
+```csharp
+type name = value;
+```
+
+**Examples:**
+```csharp
+int age = 25;
+string name = "Alex";
+double height = 5.9;
+bool isStudent = true;
+decimal salary = 50000.00m;
+```
+
+Key points:
+- `type` — What kind of data (int, string, double, etc.)
+- `name` — What you call the variable (must start with letter or `_`)
+- `= value` — The initial value you store
+
+---
+
+## Step 3: Getting User Input
+
+So far you've printed output. Now you'll **get input** from the user:
+
+```csharp
+Console.Write("What is your name? ");
+string name = Console.ReadLine();
+```
+
+**Important notes:**
+- `Console.Write()` — Prints text WITHOUT a newline (cursor stays on same line)
+- `Console.ReadLine()` — Waits for user to type and press Enter
+- The input is always returned as a **string**, even if it's numbers!
+
+**Example:**
+```
+What is your name? 
+> Alex
+```
+
+---
+
+## Step 4: Converting Types (Parsing)
+
+When the user enters "25", it's stored as the **string** `"25"`, not the **int** `25`. You need to convert it:
+
+```csharp
+Console.Write("How old are you? ");
+string ageInput = Console.ReadLine();
+int age = int.Parse(ageInput);  // Convert string to int
+```
+
+Or shorter:
+```csharp
+int age = int.Parse(Console.ReadLine());
+```
+
+**Common conversions:**
+```csharp
+int number = int.Parse("25");           // String to int
+double decimal = double.Parse("5.9");   // String to double
+bool boolean = bool.Parse("true");      // String to bool
+```
+
+---
+
+## Step 5: Working With Input Data
+
+Once you have variables, you can work with them:
+
+```csharp
+// Get input
+Console.Write("Current salary: ");
+double salary = double.Parse(Console.ReadLine());
+
+// Calculate
+double salaryWithRaise = salary * 1.10;  // 10% raise
+
+// Display
+Console.WriteLine($"New salary: ${salaryWithRaise:F2}");
+```
+
+The `:F2` format means "show 2 decimal places" (like money).
+
+---
+
+## Step 6: Mini Challenge
+
+**Build a simple calculator/profile that:**
+1. Asks for the user's name
+2. Asks for their age
+3. Asks for their current salary
+4. Calculates:
+   - What their age will be in 10 years
+   - What their salary would be with a 10% raise
+5. Displays all the results nicely formatted
+
+**Example output:**
+```
+=== Welcome to Your Profile ===
+
+What is your name?
+> Alex
+
+How old are you?
+> 25
+
+What is your current salary?
+> 50000
+
+=== Your Information ===
+Name: Alex
+Current Age: 25
+Age in 10 years: 35
+Current Salary: $50,000.00
+Salary with 10% raise: $55,000.00
+```
+
+**Steps to build it:**
+1. Create a new console project: `dotnet new console -n Day02-Profile`
+2. Use `Console.Write()` to ask for name, age, salary
+3. Use `Console.ReadLine()` to get each input
+4. Convert the strings to `int` and `double` with `int.Parse()` and `double.Parse()`
+5. Calculate the new age and new salary
+6. Display everything with string interpolation
+
+**Hints:**
+```csharp
+// Convert and get in one line
+int age = int.Parse(Console.ReadLine());
+
+// Format money with 2 decimals
+Console.WriteLine($"Salary: ${salary:F2}");
+
+// Do math
+int futureAge = currentAge + 10;
+double raisedSalary = currentSalary * 1.10;
+```
+
+---
+
+## ✅ Checklist: You've Completed Day 02 If...
+
+- [ ] You understand what int, string, double, and bool are
+- [ ] You can declare variables with proper syntax
+- [ ] You can get user input with `Console.ReadLine()`
+- [ ] You can convert strings to int and double with `Parse()`
+- [ ] You can do calculations with different types
+- [ ] You can format numbers (especially money with `:F2`)
+- [ ] You completed the mini challenge (profile calculator)
+- [ ] Your program runs without errors and shows all outputs
+
+---
+
+## 🔗 Next Steps
+
+Tomorrow (Day 03) you'll learn about **Control Flow** — how to make decisions in your code with `if`, `else`, and `switch` statements. You'll be able to say things like:
+- "If the user is over 18, show one message, otherwise show another"
+- "Keep asking until the user enters valid data"
+
+---
+
+## 📚 Optional: Deeper Exploration
+
+If you finish early:
+
+1. **Try different formats:**
+   ```csharp
+   double price = 19.99;
+   Console.WriteLine($"{price:C}");     // Currency: $19.99
+   Console.WriteLine($"{price:N2}");    // Number with commas
+   ```
+
+2. **Try `decimal` for money:**
+   ```csharp
+   decimal price = 19.99m;  // Note the 'm' at the end
+   Console.WriteLine($"Price: {price:C}");
+   ```
+
+3. **Learn about `var` (type inference):**
+   ```csharp
+   var name = "Alex";   // C# figures out it's a string
+   var age = 25;        // C# figures out it's an int
+   ```
+
+4. **Read the official docs:**
+   - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/" target="_blank">C# Data Types</a>
+   - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/variables/how-to-parse-strings-using-parse" target="_blank">Parsing Strings</a>
+
+---
+
+## 💬 Troubleshooting
+
+**Problem:** "Input string was not in a correct format"
+- **Cause:** You tried to parse invalid data (e.g., parsing "abc" as an int)
+- **Solution:** For now, make sure users enter the right type. Day 03+ we'll handle this better with error checking.
+
+**Problem:** Numbers don't show decimal places
+- **Cause:** You used `int` instead of `double` for decimal values
+- **Solution:** Use `double` for any value that might have decimals
+
+**Problem:** Math is giving strange results
+- **Cause:** Integer division (5 / 2 = 2, not 2.5)
+- **Solution:** Use `double` for division: `5.0 / 2` or `(double)5 / 2`
+
+---
+
+## 🎬 Summary
+
+Today you learned the fundamental building blocks: **types** and **variables**. You also learned how to get **input from users** and **convert data** between types. These are the core skills you'll use in every program you write.
+
+With input, conversion, and calculations, you're moving from "Hello, World" to real interaction!
+
+**You've got this.** See you on Day 03! 🚀
+
