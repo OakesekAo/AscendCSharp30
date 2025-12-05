@@ -108,13 +108,13 @@ First, **open a terminal** in your code editor or operating system.
 **If using VS Code:**
 1. Open VS Code
 2. At the top menu, click **Terminal** → **New Terminal**
-   - Or press **Ctrl + `` (Ctrl + Backtick)**
+   - Or press **Ctrl + ` (Ctrl + Backtick)**
 3. A terminal panel will appear at the bottom of your screen
 
 **If using Visual Studio 2022/2025:**
 1. Open Visual Studio
 2. At the top menu, click **Tools** → **Command Line** → **Developer PowerShell**
-   - Or press **Ctrl + Alt + `` (Ctrl + Alt + Backtick)**
+   - Or press **Ctrl + Alt + ` (Ctrl + Alt + Backtick)**
 3. A PowerShell window will open
 
 **If using Windows (without an editor open):**
