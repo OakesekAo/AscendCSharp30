@@ -1831,7 +1831,7 @@ double salaryWithRaise = salary * 1.10;  // 10% raise
 // Display
 Console.WriteLine($&quot;New salary: ${salaryWithRaise:F2}&quot;);
 </code></pre>
-<p>The <code>:F2</code> format means "show 2 decimal places" (like money).</p>
+<p>The <code>:N2</code> format means "show 2 decimal places with thousand separators (commas)" — perfect for money and large numbers.</p>
 <hr />
 <h2 id="step-6-mini-challenge">Step 6: Mini Challenge</h2>
 <p><strong>Build a simple calculator/profile that:</strong>
@@ -1873,8 +1873,8 @@ Salary with 10% raise: $55,000.00
 <pre><code class="language-csharp">// Convert and get in one line
 int age = int.Parse(Console.ReadLine());
 
-// Format money with 2 decimals
-Console.WriteLine($&quot;Salary: ${salary:F2}&quot;);
+// Format money with 2 decimals and commas
+Console.WriteLine($&quot;Salary: ${salary:N2}&quot;);
 
 // Do math
 int futureAge = currentAge + 10;
@@ -1899,7 +1899,7 @@ double raisedSalary = currentSalary * 1.10;
 <li>[ ] You can get user input with <code>Console.ReadLine()</code></li>
 <li>[ ] You can convert strings to int and double with <code>Parse()</code></li>
 <li>[ ] You can do calculations with different types</li>
-<li>[ ] You can format numbers (especially money with <code>:F2</code>)</li>
+<li>[ ] You can format numbers (especially money with <code>:N2</code> for commas or <code>:C</code> for currency)</li>
 <li>[ ] You completed the mini challenge (profile calculator)</li>
 <li>[ ] Your program runs with <code>dotnet run</code> and shows all outputs correctly</li>
 </ul>
@@ -1935,7 +1935,7 @@ double raisedSalary = currentSalary * 1.10;
 <p><strong>Read the official docs:</strong></p>
 </li>
 <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/" target="_blank">C# Data Types</a></li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/variables/how-to-parse-strings-using-parse" target="_blank">Parsing Strings</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/parsing-strings" target="_blank">Parsing Strings</a></li>
 </ol>
 <hr />
 <h2 id="troubleshooting">💬 Troubleshooting</h2>
