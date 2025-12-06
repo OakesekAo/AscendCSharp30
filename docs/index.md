@@ -18,6 +18,11 @@ Each day takes ~60-90 minutes and builds on the previous day. No skipping — ev
 
 ## 📅 Recent Updates
 
+**Day 03 — Control Flow** ✅ Complete
+- If/else conditionals and logical operators
+- While and for loops with validation
+- Grade calculator mini-challenge
+
 **Day 02 — Types & Variables** ✅ Complete
 - User input with `Console.ReadLine()`
 - Type conversions and parsing
@@ -44,6 +49,14 @@ Dependency injection, logging, HttpClient, clean architecture, mini API project
 
 ### Week 4: Full-Stack Development
 EF Core, unit testing, Blazor, authentication, deployment, capstone project
+
+---
+
+## 📦 Building ServiceHub
+
+Throughout your 30-day journey, you're building **ServiceHub** — a real-world operations platform for service businesses.
+
+[Learn about the ServiceHub vision, domain model, and user stories →](servicehub-overview.md)
 
 ---
 

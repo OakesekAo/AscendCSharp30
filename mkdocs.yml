@@ -8,6 +8,7 @@ site_dir: site
 nav:
   - Home: index.md
   - Quickstart: quickstart.md
+  - ServiceHub Overview: servicehub-overview.md
   - Days:
     - Day 01 — Setup & Tooling: days/Day01-Setup-And-Tooling.md
     - Day 02 — Types & Variables: days/Day02-Types-And-Variables.md
@@ -44,6 +45,7 @@ repo_url: https://github.com/OakesekAo/AscendCSharp30
 use_directory_urls: false
 plugins:
   - search
+
 
 
 

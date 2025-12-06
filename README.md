@@ -57,6 +57,20 @@ This becomes a **GitHub-portfolio‑ready project** demonstrating real skills.
 
 ---
 
+## 📦 ServiceHub — The Capstone Project
+
+Throughout the 30 days, you're building **ServiceHub**: a lightweight operations platform for small local service businesses.
+
+You'll gradually add features across all 30 days:
+- **Week 1:** Learn C# using ServiceHub domain examples (customers, work orders, statuses)
+- **Week 2:** Build a minimal ASP.NET Core API for ServiceHub data
+- **Week 3:** Add EF Core persistence and Blazor UI components  
+- **Week 4:** Implement authentication, dashboard, and deploy
+
+**[View the full ServiceHub vision, domain model, and user stories →](docs/servicehub-overview.md)**
+
+---
+
 ## 📘 Learning Structure (Daily Format)
 
 Every day takes **60–90 minutes**:
