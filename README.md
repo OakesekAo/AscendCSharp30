@@ -55,19 +55,29 @@ A complete full-stack mini-application using:
 
 This becomes a **GitHub-portfolio‑ready project** demonstrating real skills.
 
----
+### The Capstone: ServiceHub
 
-## 📦 ServiceHub — The Capstone Project
+The capstone project for AscendCSharp30 is **ServiceHub** – a lightweight operations app for small local service businesses.
 
-Throughout the 30 days, you're building **ServiceHub**: a lightweight operations platform for small local service businesses.
+Over the 30 days, you'll gradually build ServiceHub using modern C# and .NET:
 
-You'll gradually add features across all 30 days:
-- **Week 1:** Learn C# using ServiceHub domain examples (customers, work orders, statuses)
-- **Week 2:** Build a minimal ASP.NET Core API for ServiceHub data
-- **Week 3:** Add EF Core persistence and Blazor UI components  
-- **Week 4:** Implement authentication, dashboard, and deploy
+- **Week 1:** C# fundamentals using ServiceHub domain examples (customers, work orders, statuses)
+- **Week 2:** ASP.NET Core Web API exposing ServiceHub endpoints
+- **Week 3:** EF Core persistence with migrations and Blazor UI components
+- **Week 4:** Authentication, dashboard, and deployment
 
-**[View the full ServiceHub vision, domain model, and user stories →](docs/servicehub-overview.md)**
+By the end, you'll have shipped a real product with:
+
+- **Customers**, **work orders**, and **technicians** as your domain model
+- An **ASP.NET Core Web API** that exposes them
+- **EF Core** for data persistence and migrations
+- A **Blazor WebAssembly** frontend that calls the API
+- **Authentication** so only the owner can access data
+- A simple **dashboard** with real-time stats
+
+This is a **real portfolio project** – structured like a small SaaS app you could actually extend, improve, and deploy to production.
+
+**[Learn more about ServiceHub's full vision, domain model, and user stories →](docs/servicehub-overview.md)**
 
 ---
 
