@@ -13,25 +13,25 @@
       
       
       
-        <link rel="prev" href="Day16-Options-Pattern-And-Config.html">
+        <link rel="prev" href="quickstart.html">
       
       
-        <link rel="next" href="Day18-HttpClient.html">
+        <link rel="next" href="days/Day01-Setup-And-Tooling.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Day 17 — Logging - AscendCSharp30</title>
+        <title>ServiceHub Overview - AscendCSharp30</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#day17-starter-logging" class="md-skip">
+        <a href="#servicehub-your-capstone-project" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="AscendCSharp30" class="md-header__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
+    <a href="index.html" title="AscendCSharp30" class="md-header__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Day 17 — Logging
+              ServiceHub Overview
             
           </span>
         </div>
@@ -194,7 +194,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="AscendCSharp30" class="md-nav__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
+    <a href="index.html" title="AscendCSharp30" class="md-nav__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -224,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -251,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart.html" class="md-nav__link">
+      <a href="quickstart.html" class="md-nav__link">
         
   
   
@@ -275,10 +275,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../servicehub-overview.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ServiceHub Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="servicehub-overview.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -294,6 +321,159 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-domain-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Domain Concepts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Domain Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkOrder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technician-optional-for-mvp-great-for-stretch-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technician (optional for MVP, great for stretch goals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicetype-lookup-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceType (lookup table)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories-for-the-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories for the MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories for the MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-order-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Order Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-servicehub-maps-to-the-30-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How ServiceHub Maps to the 30 Days
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -302,20 +482,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -336,7 +514,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -354,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day01-Setup-And-Tooling.html" class="md-nav__link">
+      <a href="days/Day01-Setup-And-Tooling.html" class="md-nav__link">
         
   
   
@@ -382,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day02-Types-And-Variables.html" class="md-nav__link">
+      <a href="days/Day02-Types-And-Variables.html" class="md-nav__link">
         
   
   
@@ -410,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day03-Control-Flow.html" class="md-nav__link">
+      <a href="days/Day03-Control-Flow.html" class="md-nav__link">
         
   
   
@@ -438,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day04-Collections.html" class="md-nav__link">
+      <a href="days/Day04-Collections.html" class="md-nav__link">
         
   
   
@@ -466,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day05-Methods-And-Parameters.html" class="md-nav__link">
+      <a href="days/Day05-Methods-And-Parameters.html" class="md-nav__link">
         
   
   
@@ -494,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day06-LINQ-Fundamentals.html" class="md-nav__link">
+      <a href="days/Day06-LINQ-Fundamentals.html" class="md-nav__link">
         
   
   
@@ -522,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day07-Mini-Console-Project.html" class="md-nav__link">
+      <a href="days/Day07-Mini-Console-Project.html" class="md-nav__link">
         
   
   
@@ -550,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day08-Classes-And-Objects.html" class="md-nav__link">
+      <a href="days/Day08-Classes-And-Objects.html" class="md-nav__link">
         
   
   
@@ -578,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day09-Interfaces-And-Abstraction.html" class="md-nav__link">
+      <a href="days/Day09-Interfaces-And-Abstraction.html" class="md-nav__link">
         
   
   
@@ -606,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day10-Inheritance-And-Polymorphism.html" class="md-nav__link">
+      <a href="days/Day10-Inheritance-And-Polymorphism.html" class="md-nav__link">
         
   
   
@@ -634,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day11-Error-Handling.html" class="md-nav__link">
+      <a href="days/Day11-Error-Handling.html" class="md-nav__link">
         
   
   
@@ -662,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day12-Async-And-Await.html" class="md-nav__link">
+      <a href="days/Day12-Async-And-Await.html" class="md-nav__link">
         
   
   
@@ -690,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day13-IO-And-JSON.html" class="md-nav__link">
+      <a href="days/Day13-IO-And-JSON.html" class="md-nav__link">
         
   
   
@@ -718,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day14-Service-Simulation-Project.html" class="md-nav__link">
+      <a href="days/Day14-Service-Simulation-Project.html" class="md-nav__link">
         
   
   
@@ -746,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day15-Dependency-Injection.html" class="md-nav__link">
+      <a href="days/Day15-Dependency-Injection.html" class="md-nav__link">
         
   
   
@@ -774,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day16-Options-Pattern-And-Config.html" class="md-nav__link">
+      <a href="days/Day16-Options-Pattern-And-Config.html" class="md-nav__link">
         
   
   
@@ -799,19 +977,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="Day17-Logging.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="days/Day17-Logging.html" class="md-nav__link">
         
   
   
@@ -827,7 +996,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -840,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day18-HttpClient.html" class="md-nav__link">
+      <a href="days/Day18-HttpClient.html" class="md-nav__link">
         
   
   
@@ -868,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day19-Clean-Architecture.html" class="md-nav__link">
+      <a href="days/Day19-Clean-Architecture.html" class="md-nav__link">
         
   
   
@@ -896,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day20-Advanced-LINQ.html" class="md-nav__link">
+      <a href="days/Day20-Advanced-LINQ.html" class="md-nav__link">
         
   
   
@@ -924,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day21-Mini-API-Project.html" class="md-nav__link">
+      <a href="days/Day21-Mini-API-Project.html" class="md-nav__link">
         
   
   
@@ -952,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day22-EF-Core-Basics.html" class="md-nav__link">
+      <a href="days/Day22-EF-Core-Basics.html" class="md-nav__link">
         
   
   
@@ -980,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day23-EF-Core-Advanced.html" class="md-nav__link">
+      <a href="days/Day23-EF-Core-Advanced.html" class="md-nav__link">
         
   
   
@@ -1008,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day24-Unit-Testing.html" class="md-nav__link">
+      <a href="days/Day24-Unit-Testing.html" class="md-nav__link">
         
   
   
@@ -1036,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day25-Blazor-Components.html" class="md-nav__link">
+      <a href="days/Day25-Blazor-Components.html" class="md-nav__link">
         
   
   
@@ -1064,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day26-API-Integration.html" class="md-nav__link">
+      <a href="days/Day26-API-Integration.html" class="md-nav__link">
         
   
   
@@ -1092,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day27-Authentication.html" class="md-nav__link">
+      <a href="days/Day27-Authentication.html" class="md-nav__link">
         
   
   
@@ -1120,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day28-Deployment.html" class="md-nav__link">
+      <a href="days/Day28-Deployment.html" class="md-nav__link">
         
   
   
@@ -1148,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day29-Refactoring-And-Performance.html" class="md-nav__link">
+      <a href="days/Day29-Refactoring-And-Performance.html" class="md-nav__link">
         
   
   
@@ -1176,7 +1344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day30-Capstone.html" class="md-nav__link">
+      <a href="days/Day30-Capstone.html" class="md-nav__link">
         
   
   
@@ -1224,6 +1392,147 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-domain-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Domain Concepts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Domain Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkOrder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technician-optional-for-mvp-great-for-stretch-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technician (optional for MVP, great for stretch goals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicetype-lookup-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceType (lookup table)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories-for-the-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories for the MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories for the MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-order-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Order Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-servicehub-maps-to-the-30-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How ServiceHub Maps to the 30 Days
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1242,16 +1551,108 @@
   
 
 
-<h1 id="day17-starter-logging">Day17-Starter — Logging</h1>
-<p>Objectives
-- Follow the daily learning objectives and complete the starter tasks.</p>
-<p>Starter steps
-1. Read the objectives.
-2. Open this folder in Visual Studio (<strong>Open Folder</strong> recommended) or open the provided project.
-3. Implement the exercises in this folder following the TODOs.</p>
-<p>Boilerplate
-- This folder contains minimal code and instructions to get started.
-- Do not commit build artifacts; keep only source and instructions.</p>
+<h1 id="servicehub-your-capstone-project">ServiceHub – Your Capstone Project</h1>
+<p>ServiceHub is the capstone project for AscendCSharp30: a lightweight operations platform for small local service businesses (cleaners, landscapers, HVAC techs, handypeople, etc.).</p>
+<p>The idea is simple:</p>
+<blockquote>
+<p>Give a solo or small business owner one place to track <strong>customers</strong>, <strong>work orders</strong>, and <strong>daily schedules</strong> – without needing a giant enterprise system.</p>
+</blockquote>
+<p>Over 30 days, you'll gradually build ServiceHub from scratch using modern C# and .NET:</p>
+<ul>
+<li>A <strong>C# domain model</strong> for customers, technicians, and work orders</li>
+<li>An <strong>ASP.NET Core Web API</strong> exposing that domain</li>
+<li><strong>EF Core</strong> for relational data and migrations</li>
+<li>A <strong>Blazor WebAssembly</strong> frontend that calls your API</li>
+<li><strong>Authentication</strong> so only the owner can manage their data</li>
+<li>A simple <strong>dashboard</strong> with real-time stats</li>
+</ul>
+<p>By Day 30, you'll have a full-stack mini SaaS deployed and ready to demo.</p>
+<hr />
+<h2 id="core-domain-concepts">Core Domain Concepts</h2>
+<p>ServiceHub keeps the domain intentionally small and realistic:</p>
+<h3 id="customer">Customer</h3>
+<p>Represents a client of the business.</p>
+<ul>
+<li><code>Id</code></li>
+<li><code>Name</code></li>
+<li><code>Email</code></li>
+<li><code>Phone</code></li>
+<li><code>Address</code></li>
+<li><code>Notes</code></li>
+</ul>
+<h3 id="workorder">WorkOrder</h3>
+<p>Represents a job to be done for a customer.</p>
+<ul>
+<li><code>Id</code></li>
+<li><code>CustomerId</code></li>
+<li><code>ServiceTypeId</code> (optional)</li>
+<li><code>TechnicianId</code> (optional)</li>
+<li><code>ScheduledDate</code></li>
+<li><code>Description</code></li>
+<li><code>Status</code> (<code>Scheduled</code>, <code>InProgress</code>, <code>Completed</code>, <code>Canceled</code>)</li>
+<li><code>CreatedAt</code>, <code>UpdatedAt</code></li>
+</ul>
+<h3 id="technician-optional-for-mvp-great-for-stretch-goals">Technician (optional for MVP, great for stretch goals)</h3>
+<p>Represents the person doing the work.</p>
+<ul>
+<li><code>Id</code></li>
+<li><code>Name</code></li>
+<li><code>IsActive</code></li>
+<li><code>Notes</code></li>
+</ul>
+<h3 id="servicetype-lookup-table">ServiceType (lookup table)</h3>
+<p>Represents the type of work:</p>
+<ul>
+<li><code>Id</code></li>
+<li><code>Name</code> (e.g., "Gutter Cleaning", "Mowing", "AC Tune-up")</li>
+<li><code>DefaultEstimatedDurationMinutes</code></li>
+</ul>
+<p>These entities are perfect for practicing:</p>
+<ul>
+<li>C# classes + records</li>
+<li>EF Core relationships</li>
+<li>LINQ queries</li>
+<li>Blazor forms and dropdowns</li>
+</ul>
+<hr />
+<h2 id="user-stories-for-the-mvp">User Stories for the MVP</h2>
+<p>These stories give meaning to the features you'll build:</p>
+<h3 id="customer-management">Customer Management</h3>
+<ul>
+<li>As an <strong>owner</strong>, I can create a new customer with name, contact info, and notes.</li>
+<li>As an <strong>owner</strong>, I can view and search a list of customers.</li>
+<li>As an <strong>owner</strong>, I can edit a customer's details.</li>
+</ul>
+<h3 id="work-order-management">Work Order Management</h3>
+<ul>
+<li>As an <strong>owner</strong>, I can create a work order for a customer with a scheduled date and description.</li>
+<li>As an <strong>owner</strong>, I can set and update the status of each work order.</li>
+<li>As an <strong>owner</strong>, I can filter work orders by status or date (e.g., "today's jobs").</li>
+<li>As an <strong>owner</strong>, I can see upcoming work orders in a single list.</li>
+</ul>
+<h3 id="dashboard">Dashboard</h3>
+<ul>
+<li>As an <strong>owner</strong>, I can see:</li>
+<li>Total jobs scheduled for today</li>
+<li>Jobs completed this week</li>
+<li>Jobs by service type</li>
+<li>Overdue jobs</li>
+</ul>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li>As an <strong>owner</strong>, I must log in to see or change any ServiceHub data.</li>
+<li>A logged-out visitor should not be able to view or modify customers or work orders.</li>
+</ul>
+<hr />
+<h2 id="how-servicehub-maps-to-the-30-days">How ServiceHub Maps to the 30 Days</h2>
+<p>You won't build ServiceHub all at once. Instead, each week adds a layer:</p>
+<ul>
+<li><strong>Week 1 – Language:</strong> C# fundamentals using examples from the ServiceHub domain (customers, work orders, statuses).</li>
+<li><strong>Week 2 – API:</strong> Minimal API that exposes customer and work-order endpoints.</li>
+<li><strong>Week 3 – Data + UI:</strong> EF Core for persistence + first Blazor pages that call your API.</li>
+<li><strong>Week 4 – Real-World:</strong> Authentication, dashboard, cleanup, deployment.</li>
+</ul>
+<p>The goal is that by Day 30 you don't just "know C#" – you've shipped a real full-stack app.</p>
 
 
 
@@ -1301,10 +1702,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
