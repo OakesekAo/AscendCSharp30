@@ -107,43 +107,43 @@ AscendCSharp30/
 
 ## 🗂️ Progress Checklist
 
-### **Week 1 — Core Language Fundamentals**
+### **Week 1 — Core C# Foundations (ServiceHub Domain Warmup)**
 - [ ] Day 1 – Setup & Tooling  
 - [ ] Day 2 – Types & Variables  
 - [ ] Day 3 – Control Flow  
 - [ ] Day 4 – Collections  
 - [ ] Day 5 – Methods & Parameters  
 - [ ] Day 6 – LINQ Fundamentals  
-- [ ] Day 7 – Mini Console Project  
+- [ ] Day 7 – Mini Console Domain Project (ServiceHub Concepts)
 
-### **Week 2 — Intermediate C# & OOP**
-- [ ] Day 8 – Classes & Objects  
-- [ ] Day 9 – Interfaces & Abstraction  
-- [ ] Day 10 – Inheritance & Polymorphism  
-- [ ] Day 11 – Error Handling  
-- [ ] Day 12 – Async & Await  
-- [ ] Day 13 – IO & JSON  
-- [ ] Day 14 – Service Simulation Project  
+### **Week 2 — Building the ServiceHub API (Minimal API + DI + LINQ)**
+- [ ] Day 8 – Dependency Injection Basics  
+- [ ] Day 9 – Minimal API Foundations (ServiceHub API v0.1)  
+- [ ] Day 10 – DTOs & API Contracts  
+- [ ] Day 11 – Async/Await in Web APIs  
+- [ ] Day 12 – Error Handling + ProblemDetails  
+- [ ] Day 13 – LINQ in the API (Filtering, Sorting)  
+- [ ] Day 14 – Advanced LINQ & API Enhancements (Reports)
 
-### **Week 3 — Advanced C# + ASP.NET**
-- [ ] Day 15 – Dependency Injection  
-- [ ] Day 16 – Options Pattern & Config  
-- [ ] Day 17 – Logging  
-- [ ] Day 18 – HttpClient  
-- [ ] Day 19 – Clean Architecture  
-- [ ] Day 20 – Advanced LINQ  
-- [ ] Day 21 – Mini API Project  
+### **Week 3 — Database + Blazor Foundations (Full-Stack ServiceHub)**
+- [ ] Day 15 – EF Core Setup (ServiceHub Database)  
+- [ ] Day 16 – EF Core CRUD + Relationships  
+- [ ] Day 17 – Query Optimization + Repository Layer  
+- [ ] Day 18 – API Architecture + Project Structure  
+- [ ] Day 19 – Blazor Basics (Components, Routing)  
+- [ ] Day 20 – Blazor ↔ API Integration  
+- [ ] Day 21 – Blazor Forms + Validation (Work Orders)
 
-### **Week 4 — Real-World Development**
-- [ ] Day 22 – EF Core Basics  
-- [ ] Day 23 – EF Core Advanced  
-- [ ] Day 24 – Unit Testing  
-- [ ] Day 25 – Blazor Components  
-- [ ] Day 26 – API Integration  
-- [ ] Day 27 – Authentication  
-- [ ] Day 28 – Deployment  
+### **Week 4 — Real-World Development & Deployment (Ship ServiceHub v1.0)**
+- [ ] Day 22 – Component Communication & State  
+- [ ] Day 23 – App-Wide State + Local Storage  
+- [ ] Day 24 – Authentication & Authorization  
+- [ ] Day 25 – UI Polish with MudBlazor  
+- [ ] Day 26 – Logging + Config + Environment Setup  
+- [ ] Day 27 – Unit & Integration Testing  
+- [ ] Day 28 – Deployment (API + Blazor)  
 - [ ] Day 29 – Refactoring & Performance  
-- [ ] Day 30 – Capstone  
+- [ ] Day 30 – Capstone: ServiceHub MVP v1.0
 
 ---
 

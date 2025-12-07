@@ -1,4 +1,4 @@
-﻿# Day25-Complete — Blazor-Components
+# Day25-Complete — Blazor-Components
 
 This is the runnable, completed state for Day25.
 
@@ -10,3 +10,10 @@ To run:
 Notes
 - This project targets .NET 10.
 - Replace or expand the project with further exercises as desired.
+
+---
+
+## 🟦 ServiceHub Context  
+ServiceHub gets its professional UI today.  
+Tables, dialogs, and dashboards gain structure through MudBlazor.
+

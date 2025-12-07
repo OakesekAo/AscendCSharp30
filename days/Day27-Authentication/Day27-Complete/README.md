@@ -1,4 +1,4 @@
-﻿# Day27-Complete — Authentication
+# Day27-Complete — Authentication
 
 This is the runnable, completed state for Day27.
 
@@ -10,3 +10,9 @@ To run:
 Notes
 - This project targets .NET 10.
 - Replace or expand the project with further exercises as desired.
+
+---
+
+## 🟦 ServiceHub Context  
+You'll write tests for ServiceHub's API and services to ensure correctness as new features ship.
+
