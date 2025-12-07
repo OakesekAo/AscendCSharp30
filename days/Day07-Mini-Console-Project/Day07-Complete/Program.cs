@@ -1,1 +1,311 @@
-using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\n// Day 07 — Week 1 Capstone: ServiceHub Job Scheduler\n// Complete, production-style console application\n// Uses: Variables, collections, control flow, methods, LINQ\n\nConsole.WriteLine(\"╔════════════════════════════════════════╗\");\nConsole.WriteLine(\"║   ServiceHub Job Scheduler - MVP v1.0  ║\");\nConsole.WriteLine(\"╚════════════════════════════════════════╝\\n\");\n\n// Initialize data\nvar workOrders = InitializeWorkOrders();\nvar running = true;\n\nwhile (running)\n{\n    DisplayMenu();\n    string choice = Console.ReadLine() ?? \"\";\n    \n    switch (choice)\n    {\n        case \"1\":\n            DisplayAllWorkOrders(workOrders);\n            break;\n        case \"2\":\n            SearchByCustomer(workOrders);\n            break;\n        case \"3\":\n            FilterByStatus(workOrders);\n            break;\n        case \"4\":\n            ShowStatistics(workOrders);\n            break;\n        case \"5\":\n            CreateNewWorkOrder(workOrders);\n            break;\n        case \"6\":\n            UpdateWorkOrderStatus(workOrders);\n            break;\n        case \"7\":\n            running = false;\n            Console.WriteLine(\"\\n👋 Thank you for using ServiceHub!\");\n            break;\n        default:\n            Console.WriteLine(\"❌ Invalid choice. Try again.\\n\");\n            break;\n    }\n}\n\n// ========== MENU ==========\nvoid DisplayMenu()\n{\n    Console.WriteLine(\"\\n┌─ Menu ─────────────────────────────────┐\");\n    Console.WriteLine(\"│ 1. View all work orders                 │\");\n    Console.WriteLine(\"│ 2. Search by customer                   │\");\n    Console.WriteLine(\"│ 3. Filter by status                     │\");\n    Console.WriteLine(\"│ 4. View statistics                      │\");\n    Console.WriteLine(\"│ 5. Create new work order                │\");\n    Console.WriteLine(\"│ 6. Update work order status             │\");\n    Console.WriteLine(\"│ 7. Exit                                 │\");\n    Console.WriteLine(\"└─────────────────────────────────────────┘\");\n    Console.Write(\"Choose an option (1-7): \");\n}\n\n// ========== DATA INITIALIZATION ==========\nList<WorkOrder> InitializeWorkOrders()\n{\n    return new()\n    {\n        new() { Id = 1, Customer = \"Alice Johnson\", Description = \"Gutter Cleaning\", ScheduledDate = DateTime.Now, DurationHours = 2, Status = \"Scheduled\" },\n        new() { Id = 2, Customer = \"Bob Smith\", Description = \"Lawn Mowing\", ScheduledDate = DateTime.Now.AddDays(1), DurationHours = 4, Status = \"Scheduled\" },\n        new() { Id = 3, Customer = \"Charlie Brown\", Description = \"HVAC Service\", ScheduledDate = DateTime.Now.AddDays(-1), DurationHours = 3, Status = \"Completed\" },\n        new() { Id = 4, Customer = \"Alice Johnson\", Description = \"Window Washing\", ScheduledDate = DateTime.Now.AddDays(2), DurationHours = 1, Status = \"Scheduled\" },\n        new() { Id = 5, Customer = \"Diana Prince\", Description = \"Appliance Repair\", ScheduledDate = DateTime.Now, DurationHours = 2, Status = \"InProgress\" },\n    };\n}\n\n// ========== DISPLAY OPERATIONS ==========\nvoid DisplayAllWorkOrders(List<WorkOrder> orders)\n{\n    if (!orders.Any())\n    {\n        Console.WriteLine(\"\\n❌ No work orders found.\");\n        return;\n    }\n    \n    Console.WriteLine(\"\\n╔════════════════════════════════════════════════════════════════════════════════╗\");\n    Console.WriteLine(\"║                         ALL WORK ORDERS                           ║\");\n    Console.WriteLine(\"╚════════════════════════════════════════════════════════════════════════════════╝\");\n    Console.WriteLine();\n    \n    var sorted = orders.OrderBy(o => o.ScheduledDate).ToList();\n    foreach (var order in sorted)\n    {\n        DisplayWorkOrder(order);\n    }\n}\n\nvoid DisplayWorkOrder(WorkOrder order)\n{\n    string statusEmoji = order.Status switch\n    {\n        \"Scheduled\" => \"📅\",\n        \"InProgress\" => \"🔧\",\n        \"Completed\" => \"✅\",\n        _ => \"❓\"\n    };\n    \n    Console.WriteLine($\"╭─ Job #{order.Id} {statusEmoji}\");\n    Console.WriteLine($\"│ Customer: {order.Customer}\");\n    Console.WriteLine($\"│ Task: {order.Description}\");\n    Console.WriteLine($\"│ Scheduled: {order.ScheduledDate:M/d/yyyy h:mm tt}\");\n    Console.WriteLine($\"│ Duration: {order.DurationHours}h\");\n    Console.WriteLine($\"│ Status: {order.Status}\");\n    Console.WriteLine(\"╰─────────────────────────────────────────────────────────────────────\");\n    Console.WriteLine();\n}\n\n// ========== SEARCH & FILTER ==========\nvoid SearchByCustomer(List<WorkOrder> orders)\n{\n    Console.Write(\"\\n🔍 Enter customer name to search: \");\n    string search = Console.ReadLine() ?? \"\";\n    \n    var results = orders.Where(o => o.Customer.ToLower().Contains(search.ToLower())).ToList();\n    \n    if (!results.Any())\n    {\n        Console.WriteLine($\"❌ No work orders found for '{search}'.\");\n        return;\n    }\n    \n    Console.WriteLine($\"\\n📋 Found {results.Count} job(s) for '{search}':\");\n    foreach (var order in results)\n    {\n        Console.WriteLine($\"  • {order.Description} ({order.Status})\");\n    }\n}\n\nvoid FilterByStatus(List<WorkOrder> orders)\n{\n    Console.WriteLine(\"\\n📊 Available statuses:\");\n    Console.WriteLine(\"  1. Scheduled\");\n    Console.WriteLine(\"  2. InProgress\");\n    Console.WriteLine(\"  3. Completed\");\n    Console.Write(\"Choose status (1-3): \");\n    \n    string statusChoice = Console.ReadLine() ?? \"\";\n    string status = statusChoice switch\n    {\n        \"1\" => \"Scheduled\",\n        \"2\" => \"InProgress\",\n        \"3\" => \"Completed\",\n        _ => \"Invalid\"\n    };\n    \n    if (status == \"Invalid\")\n    {\n        Console.WriteLine(\"❌ Invalid choice.\");\n        return;\n    }\n    \n    var results = orders.Where(o => o.Status == status).ToList();\n    \n    Console.WriteLine($\"\\n📋 {results.Count} job(s) with status '{status}':\");\n    foreach (var order in results.OrderBy(o => o.ScheduledDate))\n    {\n        Console.WriteLine($\"  • {order.Customer}: {order.Description} ({order.DurationHours}h)\");\n    }\n}\n\n// ========== STATISTICS ==========\nvoid ShowStatistics(List<WorkOrder> orders)\n{\n    if (!orders.Any())\n    {\n        Console.WriteLine(\"\\n❌ No work orders to analyze.\");\n        return;\n    }\n    \n    Console.WriteLine(\"\\n╔════════════════════════════════════════╗\");\n    Console.WriteLine(\"║         WORK ORDER STATISTICS           ║\");\n    Console.WriteLine(\"╚════════════════════════════════════════╝\\n\");\n    \n    int total = orders.Count();\n    int completed = orders.Count(o => o.Status == \"Completed\");\n    int scheduled = orders.Count(o => o.Status == \"Scheduled\");\n    int inProgress = orders.Count(o => o.Status == \"InProgress\");\n    int totalHours = orders.Sum(o => o.DurationHours);\n    double avgHours = orders.Average(o => o.DurationHours);\n    int maxHours = orders.Max(o => o.DurationHours);\n    \n    Console.WriteLine($\"📊 Total work orders: {total}\");\n    Console.WriteLine($\"   ✅ Completed: {completed}\");\n    Console.WriteLine($\"   🔧 In Progress: {inProgress}\");\n    Console.WriteLine($\"   📅 Scheduled: {scheduled}\");\n    Console.WriteLine();\n    Console.WriteLine($\"⏱️  Total hours: {totalHours}h\");\n    Console.WriteLine($\"   Average: {avgHours:F1}h per job\");\n    Console.WriteLine($\"   Longest job: {maxHours}h\");\n    Console.WriteLine();\n    \n    Console.WriteLine(\"👥 Top customers:\");\n    var topCustomers = orders\n        .GroupBy(o => o.Customer)\n        .OrderByDescending(g => g.Count())\n        .Take(3);\n    \n    foreach (var group in topCustomers)\n    {\n        int customerTotal = group.Sum(o => o.DurationHours);\n        Console.WriteLine($\"   • {group.Key}: {group.Count()} job(s), {customerTotal}h total\");\n    }\n}\n\n// ========== CREATE & UPDATE ==========\nvoid CreateNewWorkOrder(List<WorkOrder> orders)\n{\n    Console.WriteLine(\"\\n➕ Create New Work Order\");\n    \n    Console.Write(\"  Customer name: \");\n    string customer = Console.ReadLine() ?? \"\";\n    if (string.IsNullOrWhiteSpace(customer))\n    {\n        Console.WriteLine(\"❌ Customer name is required.\");\n        return;\n    }\n    \n    Console.Write(\"  Description: \");\n    string description = Console.ReadLine() ?? \"\";\n    if (string.IsNullOrWhiteSpace(description))\n    {\n        Console.WriteLine(\"❌ Description is required.\");\n        return;\n    }\n    \n    Console.Write(\"  Duration (hours): \");\n    if (!int.TryParse(Console.ReadLine(), out int hours) || hours <= 0)\n    {\n        Console.WriteLine(\"❌ Please enter a valid number of hours.\");\n        return;\n    }\n    \n    int newId = orders.Max(o => o.Id) + 1;\n    var newOrder = new WorkOrder\n    {\n        Id = newId,\n        Customer = customer,\n        Description = description,\n        ScheduledDate = DateTime.Now,\n        DurationHours = hours,\n        Status = \"Scheduled\"\n    };\n    \n    orders.Add(newOrder);\n    Console.WriteLine($\"\\n✅ Work order #{newId} created successfully!\");\n}\n\nvoid UpdateWorkOrderStatus(List<WorkOrder> orders)\n{\n    Console.Write(\"\\n🔄 Enter work order ID to update: \");\n    if (!int.TryParse(Console.ReadLine(), out int id))\n    {\n        Console.WriteLine(\"❌ Invalid ID.\");\n        return;\n    }\n    \n    var order = orders.FirstOrDefault(o => o.Id == id);\n    if (order == null)\n    {\n        Console.WriteLine(\"❌ Work order not found.\");\n        return;\n    }\n    \n    Console.WriteLine($\"\\n  Current status: {order.Status}\");\n    Console.WriteLine(\"  New status:\");\n    Console.WriteLine(\"    1. Scheduled\");\n    Console.WriteLine(\"    2. InProgress\");\n    Console.WriteLine(\"    3. Completed\");\n    Console.Write(\"  Choose (1-3): \");\n    \n    string newStatus = Console.ReadLine() switch\n    {\n        \"1\" => \"Scheduled\",\n        \"2\" => \"InProgress\",\n        \"3\" => \"Completed\",\n        _ => \"Invalid\"\n    };\n    \n    if (newStatus == \"Invalid\")\n    {\n        Console.WriteLine(\"❌ Invalid choice.\");\n        return;\n    }\n    \n    order.Status = newStatus;\n    Console.WriteLine($\"✅ Status updated to '{newStatus}'!\");\n}\n\n// ========== DATA CLASS ==========\nclass WorkOrder\n{\n    public int Id { get; set; }\n    public string Customer { get; set; } = \"\";\n    public string Description { get; set; } = \"\";\n    public DateTime ScheduledDate { get; set; }\n    public int DurationHours { get; set; }\n    public string Status { get; set; } = \"Scheduled\";\n}"
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+// Day 07 — Week 1 Capstone: ServiceHub Job Scheduler
+// Complete, production-style console application
+// Uses: Variables, collections, control flow, methods, LINQ
+
+Console.WriteLine("╔════════════════════════════════════════╗");
+Console.WriteLine("║   ServiceHub Job Scheduler - MVP v1.0  ║");
+Console.WriteLine("╚════════════════════════════════════════╝\n");
+
+// Initialize data
+var workOrders = InitializeWorkOrders();
+var running = true;
+
+while (running)
+{
+    DisplayMenu();
+    string choice = Console.ReadLine() ?? "";
+    
+    switch (choice)
+    {
+        case "1":
+            DisplayAllWorkOrders(workOrders);
+            break;
+        case "2":
+            SearchByCustomer(workOrders);
+            break;
+        case "3":
+            FilterByStatus(workOrders);
+            break;
+        case "4":
+            ShowStatistics(workOrders);
+            break;
+        case "5":
+            CreateNewWorkOrder(workOrders);
+            break;
+        case "6":
+            UpdateWorkOrderStatus(workOrders);
+            break;
+        case "7":
+            running = false;
+            Console.WriteLine("\n👋 Thank you for using ServiceHub!");
+            break;
+        default:
+            Console.WriteLine("❌ Invalid choice. Try again.\n");
+            break;
+    }
+}
+
+// ========== MENU ==========
+void DisplayMenu()
+{
+    Console.WriteLine("\n┌─ Menu ─────────────────────────────────┐");
+    Console.WriteLine("│ 1. View all work orders                 │");
+    Console.WriteLine("│ 2. Search by customer                   │");
+    Console.WriteLine("│ 3. Filter by status                     │");
+    Console.WriteLine("│ 4. View statistics                      │");
+    Console.WriteLine("│ 5. Create new work order                │");
+    Console.WriteLine("│ 6. Update work order status             │");
+    Console.WriteLine("│ 7. Exit                                 │");
+    Console.WriteLine("└─────────────────────────────────────────┘");
+    Console.Write("Choose an option (1-7): ");
+}
+
+// ========== DATA INITIALIZATION ==========
+List<WorkOrder> InitializeWorkOrders()
+{
+    return new()
+    {
+        new() { Id = 1, Customer = "Alice Johnson", Description = "Gutter Cleaning", ScheduledDate = DateTime.Now, DurationHours = 2, Status = "Scheduled" },
+        new() { Id = 2, Customer = "Bob Smith", Description = "Lawn Mowing", ScheduledDate = DateTime.Now.AddDays(1), DurationHours = 4, Status = "Scheduled" },
+        new() { Id = 3, Customer = "Charlie Brown", Description = "HVAC Service", ScheduledDate = DateTime.Now.AddDays(-1), DurationHours = 3, Status = "Completed" },
+        new() { Id = 4, Customer = "Alice Johnson", Description = "Window Washing", ScheduledDate = DateTime.Now.AddDays(2), DurationHours = 1, Status = "Scheduled" },
+        new() { Id = 5, Customer = "Diana Prince", Description = "Appliance Repair", ScheduledDate = DateTime.Now, DurationHours = 2, Status = "InProgress" },
+    };
+}
+
+// ========== DISPLAY OPERATIONS ==========
+void DisplayAllWorkOrders(List<WorkOrder> orders)
+{
+    if (!orders.Any())
+    {
+        Console.WriteLine("\n❌ No work orders found.");
+        return;
+    }
+    
+    Console.WriteLine("\n╔════════════════════════════════════════════════════════════════════════════════╗");
+    Console.WriteLine("║                         ALL WORK ORDERS                           ║");
+    Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════╝");
+    Console.WriteLine();
+    
+    var sorted = orders.OrderBy(o => o.ScheduledDate).ToList();
+    foreach (var order in sorted)
+    {
+        DisplayWorkOrder(order);
+    }
+}
+
+void DisplayWorkOrder(WorkOrder order)
+{
+    string statusEmoji = order.Status switch
+    {
+        "Scheduled" => "📅",
+        "InProgress" => "🔧",
+        "Completed" => "✅",
+        _ => "❓"
+    };
+    
+    Console.WriteLine($"╭─ Job #{order.Id} {statusEmoji}");
+    Console.WriteLine($"│ Customer: {order.Customer}");
+    Console.WriteLine($"│ Task: {order.Description}");
+    Console.WriteLine($"│ Scheduled: {order.ScheduledDate:M/d/yyyy h:mm tt}");
+    Console.WriteLine($"│ Duration: {order.DurationHours}h");
+    Console.WriteLine($"│ Status: {order.Status}");
+    Console.WriteLine("╰─────────────────────────────────────────────────────────────────────");
+    Console.WriteLine();
+}
+
+// ========== SEARCH & FILTER ==========
+void SearchByCustomer(List<WorkOrder> orders)
+{
+    Console.Write("\n🔍 Enter customer name to search: ");
+    string search = Console.ReadLine() ?? "";
+    
+    var results = orders.Where(o => o.Customer.ToLower().Contains(search.ToLower())).ToList();
+    
+    if (!results.Any())
+    {
+        Console.WriteLine($"❌ No work orders found for '{search}'.");
+        return;
+    }
+    
+    Console.WriteLine($"\n📋 Found {results.Count} job(s) for '{search}':");
+    foreach (var order in results)
+    {
+        Console.WriteLine($"  • {order.Description} ({order.Status})");
+    }
+}
+
+void FilterByStatus(List<WorkOrder> orders)
+{
+    Console.WriteLine("\n📊 Available statuses:");
+    Console.WriteLine("  1. Scheduled");
+    Console.WriteLine("  2. InProgress");
+    Console.WriteLine("  3. Completed");
+    Console.Write("Choose status (1-3): ");
+    
+    string statusChoice = Console.ReadLine() ?? "";
+    string status = statusChoice switch
+    {
+        "1" => "Scheduled",
+        "2" => "InProgress",
+        "3" => "Completed",
+        _ => "Invalid"
+    };
+    
+    if (status == "Invalid")
+    {
+        Console.WriteLine("❌ Invalid choice.");
+        return;
+    }
+    
+    var results = orders.Where(o => o.Status == status).ToList();
+    
+    Console.WriteLine($"\n📋 {results.Count} job(s) with status '{status}':");
+    foreach (var order in results.OrderBy(o => o.ScheduledDate))
+    {
+        Console.WriteLine($"  • {order.Customer}: {order.Description} ({order.DurationHours}h)");
+    }
+}
+
+// ========== STATISTICS ==========
+void ShowStatistics(List<WorkOrder> orders)
+{
+    if (!orders.Any())
+    {
+        Console.WriteLine("\n❌ No work orders to analyze.");
+        return;
+    }
+    
+    Console.WriteLine("\n╔════════════════════════════════════════╗");
+    Console.WriteLine("║         WORK ORDER STATISTICS           ║");
+    Console.WriteLine("╚════════════════════════════════════════╝\n");
+    
+    int total = orders.Count();
+    int completed = orders.Count(o => o.Status == "Completed");
+    int scheduled = orders.Count(o => o.Status == "Scheduled");
+    int inProgress = orders.Count(o => o.Status == "InProgress");
+    int totalHours = orders.Sum(o => o.DurationHours);
+    double avgHours = orders.Average(o => o.DurationHours);
+    int maxHours = orders.Max(o => o.DurationHours);
+    
+    Console.WriteLine($"📊 Total work orders: {total}");
+    Console.WriteLine($"   ✅ Completed: {completed}");
+    Console.WriteLine($"   🔧 In Progress: {inProgress}");
+    Console.WriteLine($"   📅 Scheduled: {scheduled}");
+    Console.WriteLine();
+    Console.WriteLine($"⏱️  Total hours: {totalHours}h");
+    Console.WriteLine($"   Average: {avgHours:F1}h per job");
+    Console.WriteLine($"   Longest job: {maxHours}h");
+    Console.WriteLine();
+    
+    Console.WriteLine("👥 Top customers:");
+    var topCustomers = orders
+        .GroupBy(o => o.Customer)
+        .OrderByDescending(g => g.Count())
+        .Take(3);
+    
+    foreach (var group in topCustomers)
+    {
+        int customerTotal = group.Sum(o => o.DurationHours);
+        Console.WriteLine($"   • {group.Key}: {group.Count()} job(s), {customerTotal}h total");
+    }
+}
+
+// ========== CREATE & UPDATE ==========
+void CreateNewWorkOrder(List<WorkOrder> orders)
+{
+    Console.WriteLine("\n➕ Create New Work Order");
+    
+    Console.Write("  Customer name: ");
+    string customer = Console.ReadLine() ?? "";
+    if (string.IsNullOrWhiteSpace(customer))
+    {
+        Console.WriteLine("❌ Customer name is required.");
+        return;
+    }
+    
+    Console.Write("  Description: ");
+    string description = Console.ReadLine() ?? "";
+    if (string.IsNullOrWhiteSpace(description))
+    {
+        Console.WriteLine("❌ Description is required.");
+        return;
+    }
+    
+    Console.Write("  Duration (hours): ");
+    if (!int.TryParse(Console.ReadLine(), out int hours) || hours <= 0)
+    {
+        Console.WriteLine("❌ Please enter a valid number of hours.");
+        return;
+    }
+    
+    int newId = orders.Max(o => o.Id) + 1;
+    var newOrder = new WorkOrder
+    {
+        Id = newId,
+        Customer = customer,
+        Description = description,
+        ScheduledDate = DateTime.Now,
+        DurationHours = hours,
+        Status = "Scheduled"
+    };
+    
+    orders.Add(newOrder);
+    Console.WriteLine($"\n✅ Work order #{newId} created successfully!");
+}
+
+void UpdateWorkOrderStatus(List<WorkOrder> orders)
+{
+    Console.Write("\n🔄 Enter work order ID to update: ");
+    if (!int.TryParse(Console.ReadLine(), out int id))
+    {
+        Console.WriteLine("❌ Invalid ID.");
+        return;
+    }
+    
+    var order = orders.FirstOrDefault(o => o.Id == id);
+    if (order == null)
+    {
+        Console.WriteLine("❌ Work order not found.");
+        return;
+    }
+    
+    Console.WriteLine($"\n  Current status: {order.Status}");
+    Console.WriteLine("  New status:");
+    Console.WriteLine("    1. Scheduled");
+    Console.WriteLine("    2. InProgress");
+    Console.WriteLine("    3. Completed");
+    Console.Write("  Choose (1-3): ");
+    
+    string newStatus = Console.ReadLine() switch
+    {
+        "1" => "Scheduled",
+        "2" => "InProgress",
+        "3" => "Completed",
+        _ => "Invalid"
+    };
+    
+    if (newStatus == "Invalid")
+    {
+        Console.WriteLine("❌ Invalid choice.");
+        return;
+    }
+    
+    order.Status = newStatus;
+    Console.WriteLine($"✅ Status updated to '{newStatus}'!");
+}
+
+// ========== DATA CLASS ==========
+class WorkOrder
+{
+    public int Id { get; set; }
+    public string Customer { get; set; } = "";
+    public string Description { get; set; } = "";
+    public DateTime ScheduledDate { get; set; }
+    public int DurationHours { get; set; }
+    public string Status { get; set; } = "Scheduled";
+}
