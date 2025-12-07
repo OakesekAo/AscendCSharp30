@@ -13,25 +13,23 @@
       
       
       
-        <link rel="prev" href="Day21-Mini-API-Project.html">
+        <link rel="prev" href="servicehub-overview.html">
       
-      
-        <link rel="next" href="Day23-EF-Core-Advanced.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Day 22 — EF Core Basics - AscendCSharp30</title>
+        <title>ServiceHub Domain & ERD - AscendCSharp30</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -50,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#day22-starter-ef-core-basics" class="md-skip">
+        <a href="#servicehub-domain-erd" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="AscendCSharp30" class="md-header__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
+    <a href="index.html" title="AscendCSharp30" class="md-header__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Day 22 — EF Core Basics
+              ServiceHub Domain & ERD
             
           </span>
         </div>
@@ -194,7 +192,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="AscendCSharp30" class="md-nav__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
+    <a href="index.html" title="AscendCSharp30" class="md-nav__button md-logo" aria-label="AscendCSharp30" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -224,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -251,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart.html" class="md-nav__link">
+      <a href="quickstart.html" class="md-nav__link">
         
   
   
@@ -327,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day01-Setup-And-Tooling.html" class="md-nav__link">
+      <a href="days/Day01-Setup-And-Tooling.html" class="md-nav__link">
         
   
   
@@ -355,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day02-Types-And-Variables.html" class="md-nav__link">
+      <a href="days/Day02-Types-And-Variables.html" class="md-nav__link">
         
   
   
@@ -383,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day03-Control-Flow.html" class="md-nav__link">
+      <a href="days/Day03-Control-Flow.html" class="md-nav__link">
         
   
   
@@ -411,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day04-Collections.html" class="md-nav__link">
+      <a href="days/Day04-Collections.html" class="md-nav__link">
         
   
   
@@ -439,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day05-Methods-And-Parameters.html" class="md-nav__link">
+      <a href="days/Day05-Methods-And-Parameters.html" class="md-nav__link">
         
   
   
@@ -467,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day06-LINQ-Fundamentals.html" class="md-nav__link">
+      <a href="days/Day06-LINQ-Fundamentals.html" class="md-nav__link">
         
   
   
@@ -495,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day07-Mini-Console-Project.html" class="md-nav__link">
+      <a href="days/Day07-Mini-Console-Project.html" class="md-nav__link">
         
   
   
@@ -523,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day08-Classes-And-Objects.html" class="md-nav__link">
+      <a href="days/Day08-Classes-And-Objects.html" class="md-nav__link">
         
   
   
@@ -551,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day09-Interfaces-And-Abstraction.html" class="md-nav__link">
+      <a href="days/Day09-Interfaces-And-Abstraction.html" class="md-nav__link">
         
   
   
@@ -579,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day10-Inheritance-And-Polymorphism.html" class="md-nav__link">
+      <a href="days/Day10-Inheritance-And-Polymorphism.html" class="md-nav__link">
         
   
   
@@ -607,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day11-Error-Handling.html" class="md-nav__link">
+      <a href="days/Day11-Error-Handling.html" class="md-nav__link">
         
   
   
@@ -635,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day12-Async-And-Await.html" class="md-nav__link">
+      <a href="days/Day12-Async-And-Await.html" class="md-nav__link">
         
   
   
@@ -663,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day13-IO-And-JSON.html" class="md-nav__link">
+      <a href="days/Day13-IO-And-JSON.html" class="md-nav__link">
         
   
   
@@ -691,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day14-Service-Simulation-Project.html" class="md-nav__link">
+      <a href="days/Day14-Service-Simulation-Project.html" class="md-nav__link">
         
   
   
@@ -719,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day15-Dependency-Injection.html" class="md-nav__link">
+      <a href="days/Day15-Dependency-Injection.html" class="md-nav__link">
         
   
   
@@ -747,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day16-Options-Pattern-And-Config.html" class="md-nav__link">
+      <a href="days/Day16-Options-Pattern-And-Config.html" class="md-nav__link">
         
   
   
@@ -775,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day17-Logging.html" class="md-nav__link">
+      <a href="days/Day17-Logging.html" class="md-nav__link">
         
   
   
@@ -803,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day18-HttpClient.html" class="md-nav__link">
+      <a href="days/Day18-HttpClient.html" class="md-nav__link">
         
   
   
@@ -831,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day19-Clean-Architecture.html" class="md-nav__link">
+      <a href="days/Day19-Clean-Architecture.html" class="md-nav__link">
         
   
   
@@ -859,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day20-Advanced-LINQ.html" class="md-nav__link">
+      <a href="days/Day20-Advanced-LINQ.html" class="md-nav__link">
         
   
   
@@ -887,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Day21-Mini-API-Project.html" class="md-nav__link">
+      <a href="days/Day21-Mini-API-Project.html" class="md-nav__link">
         
   
   
@@ -895,6 +893,335 @@
     
   
     Day 21 — Mini API Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day22-EF-Core-Basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 22 — EF Core Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day23-EF-Core-Advanced.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 23 — EF Core Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day24-Unit-Testing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 24 — Unit Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day25-Blazor-Components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 25 — Blazor Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day26-API-Integration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 26 — API Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day27-Authentication.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 27 — Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day28-Deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 28 — Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day29-Refactoring-And-Performance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 29 — Refactoring & Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="days/Day30-Capstone.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 30 — Capstone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_31" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_31" id="__nav_3_31_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capstone Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_31_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_31">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Capstone Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="servicehub-overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ServiceHub Overview
   
 
     
@@ -924,278 +1251,14 @@
         
       
       
-      <a href="Day22-EF-Core-Basics.html" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 22 — EF Core Basics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day23-EF-Core-Advanced.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 23 — EF Core Advanced
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day24-Unit-Testing.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 24 — Unit Testing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day25-Blazor-Components.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 25 — Blazor Components
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day26-API-Integration.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 26 — API Integration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day27-Authentication.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 27 — Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day28-Deployment.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 28 — Deployment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day29-Refactoring-And-Performance.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 29 — Refactoring & Performance
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Day30-Capstone.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Day 30 — Capstone
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_31" >
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-          <label class="md-nav__link" for="__nav_3_31" id="__nav_3_31_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
     
   
-    Capstone Project
+    ServiceHub Domain & ERD
   
 
     
@@ -1203,56 +1266,10 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_31_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_31">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Capstone Project
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../servicehub-overview.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ServiceHub Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../servicehub-domain.html" class="md-nav__link">
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="servicehub-domain.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1268,6 +1285,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkOrder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technician-optional-for-mvp-great-for-stretch-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technician (optional for MVP, great for stretch goals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceType
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationships
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ascii-erd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASCII ERD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-this-maps-to-ef-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How This Maps to EF Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1308,6 +1450,119 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkOrder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technician-optional-for-mvp-great-for-stretch-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technician (optional for MVP, great for stretch goals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceType
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationships
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ascii-erd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASCII ERD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-this-maps-to-ef-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How This Maps to EF Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1326,16 +1581,165 @@
   
 
 
-<h1 id="day22-starter-ef-core-basics">Day22-Starter — EF-Core-Basics</h1>
-<p>Objectives
-- Follow the daily learning objectives and complete the starter tasks.</p>
-<p>Starter steps
-1. Read the objectives.
-2. Open this folder in Visual Studio (<strong>Open Folder</strong> recommended) or open the provided project.
-3. Implement the exercises in this folder following the TODOs.</p>
-<p>Boilerplate
-- This folder contains minimal code and instructions to get started.
-- Do not commit build artifacts; keep only source and instructions.</p>
+<h1 id="servicehub-domain-erd">ServiceHub Domain &amp; ERD</h1>
+<p>This page describes the domain model for <strong>ServiceHub</strong>, the capstone project for AscendCSharp30.<br />
+It's your guide to how the core entities relate to each other and how they map into a relational database.</p>
+<hr />
+<h2 id="core-entities">Core Entities</h2>
+<p>ServiceHub keeps the core domain intentionally small and realistic.</p>
+<h3 id="customer">Customer</h3>
+<p>Represents a client of the business.</p>
+<ul>
+<li><code>Id</code> (int, primary key)</li>
+<li><code>Name</code> (string, required)</li>
+<li><code>Email</code> (string, optional)</li>
+<li><code>Phone</code> (string, optional)</li>
+<li><code>Address</code> (string, optional)</li>
+<li><code>Notes</code> (string, optional)</li>
+<li><code>CreatedAt</code> (DateTime)</li>
+<li><code>UpdatedAt</code> (DateTime)</li>
+</ul>
+<h3 id="workorder">WorkOrder</h3>
+<p>Represents a job scheduled for a customer.</p>
+<ul>
+<li><code>Id</code> (int, primary key)</li>
+<li><code>CustomerId</code> (FK → Customer.Id)</li>
+<li><code>ServiceTypeId</code> (FK → ServiceType.Id, optional)</li>
+<li><code>TechnicianId</code> (FK → Technician.Id, optional)</li>
+<li><code>ScheduledDate</code> (DateTime, required)</li>
+<li><code>Description</code> (string, required)</li>
+<li><code>Status</code> (enum or string: <code>Scheduled</code>, <code>InProgress</code>, <code>Completed</code>, <code>Canceled</code>)</li>
+<li><code>CreatedAt</code> (DateTime)</li>
+<li><code>UpdatedAt</code> (DateTime)</li>
+</ul>
+<h3 id="technician-optional-for-mvp-great-for-stretch-goals">Technician (optional for MVP, great for stretch goals)</h3>
+<p>Represents the person doing the work.</p>
+<ul>
+<li><code>Id</code> (int, primary key)</li>
+<li><code>Name</code> (string, required)</li>
+<li><code>IsActive</code> (bool)</li>
+<li><code>Notes</code> (string, optional)</li>
+</ul>
+<h3 id="servicetype">ServiceType</h3>
+<p>Represents the type of work being performed.</p>
+<ul>
+<li><code>Id</code> (int, primary key)</li>
+<li><code>Name</code> (string, required, e.g., "Gutter Cleaning", "Mowing", "AC Tune-up")</li>
+<li><code>DefaultEstimatedDurationMinutes</code> (int, optional)</li>
+<li><code>IsActive</code> (bool)</li>
+</ul>
+<hr />
+<h2 id="relationships">Relationships</h2>
+<p>At a high level:</p>
+<ul>
+<li>A <strong>Customer</strong> can have many <strong>WorkOrders</strong>.</li>
+<li>A <strong>Technician</strong> can be assigned to many <strong>WorkOrders</strong>.</li>
+<li>A <strong>ServiceType</strong> can be associated with many <strong>WorkOrders</strong>.</li>
+</ul>
+<p>Foreign keys:</p>
+<ul>
+<li><code>WorkOrder.CustomerId</code> → <code>Customer.Id</code></li>
+<li><code>WorkOrder.TechnicianId</code> → <code>Technician.Id</code> (optional)</li>
+<li><code>WorkOrder.ServiceTypeId</code> → <code>ServiceType.Id</code> (optional)</li>
+</ul>
+<hr />
+<h2 id="ascii-erd">ASCII ERD</h2>
+<p>Below is a simple text-based ERD to visualize the relationships:</p>
+<pre><code>+-------------+          +----------------+
+|  Customer   |          |   Technician   |
++-------------+          +----------------+
+| Id (PK)     |          | Id (PK)        |
+| Name        |          | Name           |
+| Email       |          | IsActive       |
+| Phone       |          | Notes          |
+| Address     |          +----------------+
+| Notes       |
+| CreatedAt   |                ^
+| UpdatedAt   |                |
++-------------+                |
+           ^                   |
+           |                   |
+           |                   |
+     +-----------+      +-------------+
+     | WorkOrder | ---&gt; | ServiceType |
+     +-----------+      +-------------+
+     | Id (PK)   |      | Id (PK)     |
+     | CustomerId|      | Name        |
+     | TechnicianId     | DefaultEst. |
+     | ServiceTypeId    | IsActive    |
+     | ScheduledDate    +-------------+
+     | Description |
+     | Status      |
+     | CreatedAt   |
+     | UpdatedAt   |
+     +-----------+
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>WorkOrder.CustomerId</code> → <code>Customer.Id</code></li>
+<li><code>WorkOrder.TechnicianId</code> → <code>Technician.Id</code> (optional)</li>
+<li><code>WorkOrder.ServiceTypeId</code> → <code>ServiceType.Id</code> (optional)</li>
+</ul>
+<hr />
+<h2 id="how-this-maps-to-ef-core">How This Maps to EF Core</h2>
+<p>In EF Core, you'll typically have:</p>
+<ul>
+<li>A <code>ServiceHubDbContext</code> (or similar) exposing <code>DbSet&lt;Customer&gt;</code>, <code>DbSet&lt;WorkOrder&gt;</code>, <code>DbSet&lt;Technician&gt;</code>, <code>DbSet&lt;ServiceType&gt;</code>.</li>
+</ul>
+<p>Navigation properties such as:</p>
+<ul>
+<li><code>Customer.WorkOrders</code></li>
+<li><code>WorkOrder.Customer</code></li>
+<li><code>WorkOrder.Technician</code></li>
+<li><code>WorkOrder.ServiceType</code></li>
+</ul>
+<p><strong>Example (simplified):</strong></p>
+<pre><code class="language-csharp">public class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = default!;
+    public string? Email { get; set; }
+    public string? Phone { get; set; }
+    public string? Address { get; set; }
+    public string? Notes { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
+
+    public ICollection&lt;WorkOrder&gt; WorkOrders { get; set; } = new List&lt;WorkOrder&gt;();
+}
+
+public class WorkOrder
+{
+    public int Id { get; set; }
+
+    public int CustomerId { get; set; }
+    public Customer Customer { get; set; } = default!;
+
+    public int? TechnicianId { get; set; }
+    public Technician? Technician { get; set; }
+
+    public int? ServiceTypeId { get; set; }
+    public ServiceType? ServiceType { get; set; }
+
+    public DateTime ScheduledDate { get; set; }
+    public string Description { get; set; } = default!;
+    public string Status { get; set; } = &quot;Scheduled&quot;;
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
+}
+</code></pre>
+<p>You don't need to fully implement this on Day 1, but this page gives you a north star for how the data model will evolve as you progress through the 30 days.</p>
+<hr />
+<h2 id="future-extensions">Future Extensions</h2>
+<p>Once the core is working, ServiceHub can grow into:</p>
+<ul>
+<li><strong>Invoices / Payments</strong> — Track what customers owe</li>
+<li><strong>Notes / Attachments</strong> on WorkOrders — Store photos or job notes</li>
+<li><strong>Tags or labels</strong> on Customers — Organize by service type or location</li>
+<li><strong>Technician scheduling</strong> and availability — Assign work intelligently</li>
+<li><strong>Notifications</strong> (email/SMS) — Alert customers and techs when jobs change</li>
+</ul>
+<p>Those are great stretch goals once you've completed the base AscendCSharp30 path.</p>
 
 
 
@@ -1385,10 +1789,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
