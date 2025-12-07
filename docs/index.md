@@ -38,17 +38,21 @@ Each day takes ~60-90 minutes and builds on the previous day. No skipping — ev
 
 ## 🎯 What You'll Learn
 
-### Week 1: Core Language Fundamentals
-Types, variables, control flow, collections, methods, LINQ, mini console project
+### Week 1: Core C# Foundations (ServiceHub Domain Warmup)
 
-### Week 2: Intermediate C# & OOP  
-Classes, interfaces, inheritance, error handling, async/await, file I/O, service simulation
+Types, variables, control flow, collections, methods, LINQ, and a mini console project that uses the ServiceHub domain (customers, work orders, statuses) as a running example.
 
-### Week 3: Advanced C# + ASP.NET
-Dependency injection, logging, HttpClient, clean architecture, mini API project
+### Week 2: Building the ServiceHub API (Minimal API + DI + LINQ)
 
-### Week 4: Full-Stack Development
-EF Core, unit testing, Blazor, authentication, deployment, capstone project
+Dependency injection basics, Minimal APIs, DTOs and API contracts, async/await in web APIs, error handling with ProblemDetails, and LINQ-driven filtering/sorting for your ServiceHub endpoints.
+
+### Week 3: Database + Blazor Foundations (Full-Stack ServiceHub)
+
+EF Core setup and CRUD for the ServiceHub database, relationships between customers and work orders, project structure for your API, and the first Blazor pages that call your ServiceHub API.
+
+### Week 4: Real-World Development & Deployment (Ship ServiceHub v1.0)
+
+Component communication and app-wide state, authentication and authorization, UI polish (e.g., MudBlazor), logging and configuration, testing, deployment of API + Blazor, and final capstone release of ServiceHub MVP v1.0.
 
 ---
 
