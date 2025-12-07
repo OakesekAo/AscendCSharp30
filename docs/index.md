@@ -6,6 +6,24 @@ Build strong foundations, then ship a full-stack application.
 
 ---
 
+## 🎯 Your Mission: Build ServiceHub
+
+Imagine this: **Maya Thompson** runs a small cleaning service. She tracks customers in a spreadsheet, work orders in email, and payments in a notebook. It's chaotic.
+
+She hires you — the only developer on a tight 30-day deadline — to build **ServiceHub**: a simple operations platform where she can:
+- ✅ Manage her customers
+- ✅ Schedule work orders
+- ✅ Track job status
+- ✅ See a dashboard of today's schedule
+
+**Here's the challenge:** You have 30 days to go from zero to shipped.
+
+You'll learn C# by building real features. By Day 30, you'll have deployed a **full-stack SaaS app** that Maya (and others like her) can actually use to run their business.
+
+**This is not a toy project. This is your capstone.**
+
+---
+
 ## 🚀 Quick Start
 
 **New here?** Start with Day 1:

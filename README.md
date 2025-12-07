@@ -57,27 +57,51 @@ This becomes a **GitHub-portfolio‑ready project** demonstrating real skills.
 
 ### The Capstone: ServiceHub
 
-The capstone project for AscendCSharp30 is **ServiceHub** – a lightweight operations app for small local service businesses.
+**The Story:**
 
-Over the 30 days, you'll gradually build ServiceHub using modern C# and .NET:
+Maya Thompson runs a small cleaning service. She's drowning in spreadsheets, email chains, and sticky notes. She hires you — the only developer — to build **ServiceHub**: a lightweight operations platform where she can manage customers, schedule jobs, and track work orders.
 
-- **Week 1:** C# fundamentals using ServiceHub domain examples (customers, work orders, statuses)
-- **Week 2:** ASP.NET Core Web API exposing ServiceHub endpoints
-- **Week 3:** EF Core persistence with migrations and Blazor UI components
-- **Week 4:** Authentication, dashboard, and deployment
+You have 30 days to ship it.
 
-By the end, you'll have shipped a real product with:
+**What You'll Build:**
 
-- **Customers**, **work orders**, and **technicians** as your domain model
-- An **ASP.NET Core Web API** that exposes them
-- **EF Core** for data persistence and migrations
-- A **Blazor WebAssembly** frontend that calls the API
-- **Authentication** so only the owner can access data
-- A simple **dashboard** with real-time stats
+Over 4 sprints, you'll ship a production-ready, full-stack SaaS app:
 
-This is a **real portfolio project** – structured like a small SaaS app you could actually extend, improve, and deploy to production.
+- **Week 1 (Prep Sprint):** Master C# fundamentals using ServiceHub domain examples
+- **Week 2 (API Sprint):** Build a Minimal API with endpoints for customers and work orders
+- **Week 3 (Full-Stack Sprint):** Add EF Core persistence and a Blazor UI
+- **Week 4 (Launch Sprint):** Add auth, dashboard, polish, and deploy
 
-**[Learn more about ServiceHub's full vision, domain model, and user stories →](docs/servicehub-overview.md)**
+**By Day 30, ServiceHub MVP v1.0 will be live:**
+
+- ✅ Customers can manage their business operations
+- ✅ Full relational database (EF Core)
+- ✅ Professional Blazor WebAssembly UI
+- ✅ Login + protected data
+- ✅ Real-time dashboard with metrics
+- ✅ Deployed to the cloud and production-ready
+
+**Tech Stack:**
+- C#, ASP.NET Core Web API
+- EF Core with migrations
+- Blazor WebAssembly
+- MudBlazor (UI components)
+- SQLite or PostgreSQL
+- Authentication & authorization
+- Logging & configuration
+- Unit tests
+
+**Why This Matters:**
+
+You're not practicing syntax. You're **shipping real software that solves a real problem**. By the end, you'll have:
+- A portfolio project that demonstrates full-stack .NET skills
+- Experience shipping a complete feature set
+- A capstone that impresses employers and clients
+- Code you can actually deploy and show off
+
+This is how real developers work.
+
+**[Learn more about ServiceHub's vision, domain model, and user stories →](docs/servicehub-overview.md)**
 
 ---
 

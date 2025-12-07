@@ -41,6 +41,7 @@ nav:
   - Day 30 — Capstone: days/Day30-Capstone.md
   - Capstone Project:
     - ServiceHub Overview: servicehub-overview.md
+    - ServiceHub: The Story: servicehub-story.md
     - ServiceHub Domain & ERD: servicehub-domain.md
 repo_name: OakesekAo/AscendCSharp30
 repo_url: https://github.com/OakesekAo/AscendCSharp30
