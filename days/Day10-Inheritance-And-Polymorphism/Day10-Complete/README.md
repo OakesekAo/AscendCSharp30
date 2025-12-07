@@ -1,15 +1,87 @@
-# Day10-Complete — Inheritance-And-Polymorphism
+# Day10-Complete — DTOs & API Contracts
 
-This is the runnable, completed state for Day10.
+This is the **refactored ServiceHub API with professional DTOs**.
 
-To run:
-1. cd Day10-Complete
-2. dotnet restore
-3. dotnet run
+**Builds on Day 09 with clean separation of API contract from domain models.**
 
-Notes
-- This project targets .NET 10.
-- Replace or expand the project with further exercises as desired.
+## 🚀 Quick Start
+
+```bash
+cd Day10-Complete
+dotnet run
+```
+
+## 📋 What This Program Does
+
+Same endpoints as Day 09, but with **professional API design**:
+- ✅ Request DTOs (CreateCustomerRequest)
+- ✅ Response DTOs (CustomerResponse)
+- ✅ Mapper extension methods
+- ✅ Clean separation of concerns
+- ✅ Only expose what clients need
+- ✅ Version-safe API contract
+
+## 💡 Key Differences from Day 09
+
+**Day 09 (Direct domain models):**
+```csharp
+app.MapPost("/customers", (Customer customer, Service service) => 
+    service.Create(customer)
+);
+```
+
+**Day 10 (Using DTOs):**
+```csharp
+app.MapPost("/customers", (CreateCustomerRequest request, Service service) =>
+{
+    var customer = request.ToCustomer();
+    service.Create(customer);
+    return Results.Created(..., customer.ToResponse());
+});
+```
+
+## 📊 DTOs Included
+
+```csharp
+// Requests (what clients send)
+record CreateCustomerRequest(string Name, string Email);
+record CreateWorkOrderRequest(int CustomerId, string Description, string Status);
+
+// Responses (what API returns)
+record CustomerResponse(int Id, string Name, string Email);
+record WorkOrderResponse(int Id, int CustomerId, string Description, string Status);
+```
+
+## 🎯 Mappers
+
+Clean extension methods for conversion:
+
+```csharp
+customer.ToResponse()           // Domain → DTO
+request.ToCustomer()            // DTO → Domain
+order.ToResponse()
+request.ToWorkOrder()
+```
+
+## ✅ Endpoints (Same as Day 09)
+
+```
+GET  /customers
+POST /customers
+GET  /customers/{id}
+GET  /workorders
+POST /workorders
+GET  /workorders/{id}
+GET  /health
+```
+
+## 🎬 What Day 11 Will Do
+
+Day 11 refactors to **async/await** — making repositories and services properly asynchronous.
+
+## 🟦 ServiceHub Context
+
+Now you have professional API design. The API contract is clean, versioned, and separated from implementation. This is the pattern used in enterprise applications worldwide.
 
 ---
 
