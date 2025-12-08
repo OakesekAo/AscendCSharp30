@@ -36,7 +36,7 @@ Each day takes ~60-90 minutes and builds on the previous day. No skipping — ev
 
 ## 📅 Recent Updates
 
-**Latest commits:** [View full changelog](../CHANGELOG.md)
+**Latest commits:** [View full changelog](CHANGELOG.md)
 
 - **Week 2 (Days 09-14)** ✅ Complete
   - Minimal APIs with DI pattern

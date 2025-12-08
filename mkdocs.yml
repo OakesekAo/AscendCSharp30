@@ -45,10 +45,10 @@ nav:
   - Day 29 — Refactoring & Performance: days/Day29-Refactoring-And-Performance.md
   - Day 30 — Capstone: days/Day30-Capstone.md
 - Resources:
-  - Changelog: ../CHANGELOG.md
-  - ServiceHub Overview: servicehub-overview.md
-  - ServiceHub Story: servicehub-story.md
-  - ServiceHub Domain: servicehub-domain.md
+- Changelog: CHANGELOG.md
+- ServiceHub Overview: servicehub-overview.md
+- ServiceHub Story: servicehub-story.md
+- ServiceHub Domain: servicehub-domain.md
 repo_name: OakesekAo/AscendCSharp30
 repo_url: https://github.com/OakesekAo/AscendCSharp30
 use_directory_urls: false
