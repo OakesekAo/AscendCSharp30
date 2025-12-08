@@ -4,6 +4,7 @@ obj/
 
 # MkDocs and GitHub Pages generated files
 docs/days/
+docs/CHANGELOG.md
 site/
 
 # Visual Studio temporary files, build results, and

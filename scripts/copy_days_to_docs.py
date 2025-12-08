@@ -1,14 +1,26 @@
 #!/usr/bin/env python3
 """
 Copy all Day starter READMEs into docs/days/ for MkDocs processing.
+Also copy CHANGELOG.md to docs/ for inclusion in the site.
 """
 import os
 import shutil
 from pathlib import Path
 
+# Create docs/days directory
 docs_days = Path("docs/days")
 docs_days.mkdir(parents=True, exist_ok=True)
 
+# Copy CHANGELOG.md to docs/
+changelog_src = Path("CHANGELOG.md")
+changelog_dest = Path("docs/CHANGELOG.md")
+if changelog_src.exists():
+    shutil.copy2(changelog_src, changelog_dest)
+    print(f"✓ Copied: {changelog_src} → {changelog_dest}")
+else:
+    print(f"✗ Missing: {changelog_src}")
+
+# Copy all Day starter READMEs
 days_dir = Path("days")
 count = 0
 
