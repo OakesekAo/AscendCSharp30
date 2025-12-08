@@ -99,7 +99,7 @@ Throughout your 30-day journey, you're building **ServiceHub** — a real-world 
   [github.com/OakesekAo/AscendCSharp30](https://github.com/OakesekAo/AscendCSharp30)
 
 - **Official Docs**  
-  [C# Fundamentals](https://learn.microsoft.com/en-us/dotnet/csharp/) | [.NET Documentation](https://learn.microsoft.com/en-us/dotnet/)
+  [C# Fundamentals](https://docs.microsoft.com/dotnet/csharp/) | [.NET Documentation](https://docs.microsoft.com/dotnet/)
 
 ---
 
