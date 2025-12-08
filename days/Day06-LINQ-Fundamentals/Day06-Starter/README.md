@@ -171,8 +171,8 @@ Day 07: **Mini Console Project** — ServiceHub Job Scheduler!
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/linq/" target="_blank">LINQ Overview</a>
-- <a href="https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable" target="_blank">LINQ Methods</a>
+- <a href="https://docs.microsoft.com/dotnet/csharp/" target="_blank">C# Documentation</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">Complete Repository</a>
 
 ---
 
