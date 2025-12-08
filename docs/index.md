@@ -36,21 +36,26 @@ Each day takes ~60-90 minutes and builds on the previous day. No skipping — ev
 
 ## 📅 Recent Updates
 
-**Day 03 — Control Flow** ✅ Complete
-- If/else conditionals and logical operators
-- While and for loops with validation
-- Grade calculator mini-challenge
+**Latest commits:** [View full changelog](../CHANGELOG.md)
 
-**Day 02 — Types & Variables** ✅ Complete
-- User input with `Console.ReadLine()`
-- Type conversions and parsing
-- String formatting with `:N2` (thousand separators)
-- Real mini-challenge: build a profile calculator
+- **Week 2 (Days 09-14)** ✅ Complete
+  - Minimal APIs with DI pattern
+  - DTOs and professional API contracts
+  - Async/await throughout
+  - Error handling and status codes
+  - JSON serialization and filtering
+  - Complete capstone with analytics
 
-**Day 01 — Setup & Tooling** ✅ Complete
-- .NET 10 SDK setup
-- First console app
-- Essential CLI commands
+- **Week 1 (Days 01-07)** ✅ Complete
+  - Core C# fundamentals (types, variables, control flow)
+  - Collections and LINQ querying
+  - Methods and code organization
+  - Console app capstone (Job Scheduler)
+
+- **Days 08-14 Ready** ✅
+  - All Starter READMEs for comprehensive learning
+  - All Complete Program.cs with working code
+  - Professional Complete READMEs with examples
 
 ---
 

@@ -331,8 +331,8 @@ If you finish early and want to explore more:
    ```
 
 4. **Read the official docs:**
-- <a href="https://learn.microsoft.com/en-us/dotnet/core/get-started" target="_blank">Getting Started with .NET</a>
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank">C# Basics</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

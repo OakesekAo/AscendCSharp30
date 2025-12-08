@@ -285,8 +285,8 @@ Day 09: **Minimal APIs** — Build REST endpoints that expose your services.
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection" target="_blank">Dependency Injection in .NET</a>
-- <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection-guidelines" target="_blank">DI Best Practices</a>
+- <a href="https://docs.microsoft.com/dotnet/csharp/fundamentals/types/classes" target="_blank">C# Classes</a>
+- <a href="https://docs.microsoft.com/dotnet/csharp/" target="_blank">C# Documentation</a>
 
 ---
 

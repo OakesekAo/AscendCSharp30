@@ -283,8 +283,8 @@ Day 06: **LINQ Fundamentals** — Advanced querying with collections.
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/methods" target="_blank">Methods in C#</a>
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/basic-concepts/type-parameters" target="_blank">Scope and Parameters</a>
+- <a href="https://docs.microsoft.com/dotnet/csharp/" target="_blank">C# Documentation</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">Complete Repository</a>
 
 ---
 

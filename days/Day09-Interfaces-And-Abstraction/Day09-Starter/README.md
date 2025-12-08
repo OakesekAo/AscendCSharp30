@@ -184,8 +184,8 @@ Day 10: **DTOs & API Contracts** — Separate API models from domain models.
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis" target="_blank">Minimal APIs Overview</a>
-- <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing" target="_blank">Routing in ASP.NET Core</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

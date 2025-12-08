@@ -274,8 +274,8 @@ Day 11: **Async/Await** — Make your repositories and services truly asynchrono
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/net-core-net-framework-containers/net-core-container-scenarios" target="_blank">DTOs in Microservices</a>
-- <a href="https://en.wikipedia.org/wiki/Data_transfer_object" target="_blank">DTO Pattern</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

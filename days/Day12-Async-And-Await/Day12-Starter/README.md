@@ -250,8 +250,8 @@ Day 13: **JSON & I/O** — Working with files and JSON serialization.
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.statuscodespages" target="_blank">Status Code Pages</a>
-- <a href="https://tools.ietf.org/html/rfc7807" target="_blank">RFC 7807 - Problem Details</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

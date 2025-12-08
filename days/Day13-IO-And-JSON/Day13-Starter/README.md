@@ -257,8 +257,8 @@ Day 14: **Week 2 Capstone** — Complete API with analytics and advanced feature
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to" target="_blank">JSON Serialization in .NET</a>
-- <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.json" target="_blank">System.Text.Json API</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

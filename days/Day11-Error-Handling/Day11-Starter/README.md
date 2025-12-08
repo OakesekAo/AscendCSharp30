@@ -309,8 +309,8 @@ Day 12: **Error Handling** — Handle errors properly in async code.
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming" target="_blank">Async Programming in C#</a>
-- <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming" target="_blank">Async Best Practices</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

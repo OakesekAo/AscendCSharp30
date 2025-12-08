@@ -485,8 +485,8 @@ If you finish early:
    ```
 
 4. **Read the official docs:**
-   - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/if-elseif-else" target="_blank">if, else if, else Statements</a>
-   - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements" target="_blank">Loops (for, while, do-while)</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

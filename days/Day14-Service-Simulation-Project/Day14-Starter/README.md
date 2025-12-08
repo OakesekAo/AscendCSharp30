@@ -277,8 +277,8 @@ Your API will move from in-memory to a real database, connecting to SQL Server w
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis" target="_blank">Minimal APIs Docs</a>
-- <a href="https://learn.microsoft.com/en-us/aspnet/core/" target="_blank">ASP.NET Core Overview</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

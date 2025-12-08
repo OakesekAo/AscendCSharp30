@@ -239,8 +239,8 @@ Day 05: **Methods & Parameters** — Organize code into reusable functions.
 
 ## 📚 Resources
 
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/collections" target="_blank">Collections in C#</a>
-- <a href="https://learn.microsoft.com/en-us/dotnet/csharp/linq/" target="_blank">LINQ Overview</a>
+- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 

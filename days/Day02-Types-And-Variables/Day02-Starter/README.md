@@ -320,8 +320,8 @@ If you finish early:
    ```
 
 4. **Read the official docs:**
-   - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/" target="_blank">C# Data Types</a>
-   - <a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/parsing-strings" target="_blank">Parsing Strings</a>
+- <a href="https://docs.microsoft.com/dotnet/csharp/" target="_blank">C# Documentation</a>
+- <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">Complete Repository</a>
 
 ---
 
