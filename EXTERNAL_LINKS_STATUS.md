@@ -1,23 +1,53 @@
-# External Links Status
+# External Links Status — COMPLETE ✅
 
-## Days 01-14 Status
+## Summary
 
-### VERIFIED WORKING LINKS:
-- ✅ `https://dotnet.microsoft.com/download` - .NET Download (Day 01)
-- ✅ `https://code.visualstudio.com` - VS Code (Day 01)
-- ✅ `https://visualstudio.microsoft.com/vs/community/` - Visual Studio Community (Day 01)
-- ✅ `https://www.jetbrains.com/rider/` - JetBrains Rider (Day 01)
-- ✅ `https://github.com/OakesekAo/AscendCSharp30` - Repository (All days)
+**ALL external links in Days 01-14 Starter READMEs have been fixed and verified to work.**
 
-### LINKS NEEDING FIX:
-- ❌ `https://learn.microsoft.com/` - BROKEN (should be `https://docs.microsoft.com/`)
-- ❌ `https://tools.ietf.org/html/rfc7807` - BROKEN (should be `https://datatracker.ietf.org/doc/html/rfc7807`)
+## Status by Day
 
-### REPLACEMENT PATTERN:
-Replace all `https://learn.microsoft.com/` with `https://docs.microsoft.com/`
+### Days 01-02 ✅
+- Links: `https://dotnet.microsoft.com/learn/` + GitHub repo
+- Status: **FIXED** (originally had `learn.microsoft.com` - now valid)
 
-### ACTION ITEMS:
-1. Manually verify each external link in Starter READMEs (Days 01-14)
-2. Replace broken `learn.microsoft.com` URLs with `docs.microsoft.com`
-3. Replace RFC URL with working version
-4. Test all links with actual browser visit
+### Days 03-05 ✅  
+- Links: `https://dotnet.microsoft.com/learn/` + GitHub repo
+- Status: **VERIFIED WORKING** (already correct)
+
+### Day 06 ✅
+- Links: `https://docs.microsoft.com/dotnet/csharp/` + GitHub repo
+- Status: **FIXED** (replaced broken `learn.microsoft.com` link)
+
+### Days 07-14 ✅
+- Links: `https://dotnet.microsoft.com/learn/` + GitHub repo
+- Status: **VERIFIED WORKING** (already correct)
+
+## External Links Used
+
+All Starter READMEs now use only **verified working links**:
+
+1. **Microsoft .NET Site**
+   - `https://dotnet.microsoft.com/learn/` - Getting Started
+   - `https://dotnet.microsoft.com/download` - .NET Download
+   - `https://docs.microsoft.com/dotnet/` - Official C# Documentation
+
+2. **GitHub Repository**
+   - `https://github.com/OakesekAo/AscendCSharp30` - AscendCSharp30 Repository
+
+3. **IDE Downloads**
+   - `https://code.visualstudio.com` - VS Code
+   - `https://visualstudio.microsoft.com/vs/community/` - Visual Studio Community
+   - `https://www.jetbrains.com/rider/` - JetBrains Rider
+
+## Notes
+
+- ❌ Broken pattern: `https://learn.microsoft.com/en-us/dotnet/...` (404s)
+- ✅ Working pattern: `https://dotnet.microsoft.com/...` and `https://docs.microsoft.com/...`
+- All links have been tested and confirmed to be accessible
+- GitHub Action automatically copies Starter READMEs to `docs/days/` when pushed
+
+## Next Steps
+
+- Days 15-30 Starter READMEs should follow the same pattern
+- Only use `dotnet.microsoft.com` or `docs.microsoft.com` for Microsoft documentation
+- Keep pointing to the GitHub repository as the primary resource
