@@ -1,52 +1,271 @@
-# Day 15 — EF Core Setup (ServiceHub Database)
+# Day 15 — Advanced Dependency Injection Patterns
 
-## 🚀 Week 3: Full-Stack Sprint Begins
+## 🚀 Week 3: Scaling Your Architecture
 
 **Maya's Message:**
-> "We have an API now. But it's still in memory. This week, we make ServiceHub real by adding a database. Every customer, every work order, lives forever."
+> "Your API works great. But as we add more features, dependency management gets complex. Today you'll master advanced DI patterns that make systems scalable and testable."
 
-Today, you'll set up **EF Core** and create ServiceHub's database schema.
+Today, you'll learn **advanced DI patterns**: lifetimes (Scoped, Transient, Singleton), factory patterns, and service hierarchies.
 
 ---
 
-## Learning Objectives
-- Install and configure EF Core
-- Create a DbContext for ServiceHub
-- Define entities and relationships
-- Run migrations to create the database
-- Understand how ORM works
+## 🎯 Learning Objectives
 
-## Prerequisites
+1. **Understand DI lifetimes:** When and why to use Scoped, Transient, Singleton
+2. **Master factory patterns:** Creating complex objects with DI
+3. **Build service hierarchies:** Services that depend on services
+4. **Use decorators:** Add behavior without modifying code
+5. **Configure advanced DI:** Factory methods, conditional registration
+
+---
+
+## 📋 Prerequisites
+
+Before you start:
 - Days 01-14 complete
-- Comfortable with APIs and dependency injection
-- ~60 minutes
+- Comfortable with DI from Day 08-14
+- Understand repository and service patterns
+- ~90 minutes
 
 ---
 
-## Starter Steps
-1. Read the objectives above
-2. Open this folder in your editor
-3. Follow the TODOs to set up EF Core
-4. Run migrations and verify the database is created
+## What Changed Since Day 14
 
-## Why This Matters for ServiceHub
+Day 14 had:
+```
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<CustomerService>();
+```
 
-Before today, ServiceHub's data lived in memory and disappeared on restart.
+Day 15 adds:
+```
+// Lifetimes (new)
+builder.Services.AddSingleton<IConfiguration>();        // Once for app
+builder.Services.AddScoped<UnitOfWork>();               // Once per request
+builder.Services.AddTransient<ValidationService>();     // Every time
 
-After today:
-- Customers persist forever
-- Work orders are stored reliably
-- Relationships are enforced (a work order must have a customer)
-- The database is your source of truth
+// Factories (new)
+builder.Services.AddScoped<IRepositoryFactory>(sp =>
+    new RepositoryFactory(sp.GetRequiredService<DbContext>()));
 
-This is the moment ServiceHub becomes real.
+// Decorators (new)
+builder.Services.Decorate<ICustomerRepository, CachedCustomerRepository>();
+
+// Conditional registration (new)
+if (environment.IsProduction())
+    builder.Services.AddScoped<IEmailService, SmtpEmailService>();
+else
+    builder.Services.AddScoped<IEmailService, ConsoleEmailService>();
+```
 
 ---
 
-## Next
-Day 16: Build CRUD operations for customers and work orders.
+## Step 1: Understand DI Lifetimes
 
-## Boilerplate
-- This folder contains minimal code and instructions to get started.
-- Do not commit build artifacts; keep only source and instructions.
+### **Transient** - New instance every time
+```csharp
+builder.Services.AddTransient<IValidator, CustomerValidator>();
+
+// Usage:
+var validator1 = serviceProvider.GetService<IValidator>();
+var validator2 = serviceProvider.GetService<IValidator>();
+// validator1 != validator2 (different instances)
+```
+
+**When to use:**
+- ✅ Stateless services
+- ✅ Lightweight objects
+- ✅ When fresh state needed
+- ❌ Not for expensive operations
+
+### **Scoped** - One per request
+```csharp
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+// In web app:
+// Request 1: Gets repository instance A
+// Request 2: Gets new repository instance B
+// Within request: Same instance used everywhere
+```
+
+**When to use:**
+- ✅ Repositories (per-request data consistency)
+- ✅ Services (per-request business logic)
+- ✅ DbContext (per-request database)
+- ✅ Most of your services
+
+### **Singleton** - One for entire application lifetime
+```csharp
+builder.Services.AddSingleton<IMemoryCache, MemoryCache>();
+
+// Same instance for all requests, entire app lifetime
+```
+
+**When to use:**
+- ✅ Configuration
+- ✅ Caches (expensive to create)
+- ✅ Loggers
+- ✅ Expensive resources
+- ❌ NOT for stateful services
+- ❌ NOT for things that should per-request
+
+---
+
+## Step 2: Factory Pattern
+
+Create complex objects:
+
+```csharp
+// Instead of:
+builder.Services.AddScoped<IRepository, Repository>();
+
+// Use factory:
+builder.Services.AddScoped<IRepository>(serviceProvider =>
+{
+    var connectionString = serviceProvider
+        .GetRequiredService<IConfiguration>()
+        .GetConnectionString("Default");
+    
+    var options = new RepositoryOptions { ConnectionString = connectionString };
+    return new Repository(options);
+});
+```
+
+**Benefits:**
+- ✅ Complex initialization logic
+- ✅ Conditional registration
+- ✅ Dependency access during creation
+
+---
+
+## Step 3: Service Hierarchies
+
+Services depending on services:
+
+```csharp
+public class OrderService
+{
+    private readonly ICustomerRepository _customers;
+    private readonly IWorkOrderRepository _orders;
+    private readonly IEmailService _email;
+    
+    public OrderService(
+        ICustomerRepository customers,
+        IWorkOrderRepository orders,
+        IEmailService email)
+    {
+        _customers = customers;
+        _orders = orders;
+        _email = email;
+    }
+    
+    public async Task CreateOrderAsync(int customerId, string description)
+    {
+        var customer = await _customers.GetAsync(customerId);
+        var order = await _orders.CreateAsync(customerId, description);
+        await _email.SendAsync(customer.Email, $"Order {order.Id} created");
+    }
+}
+
+// Register all:
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<OrderService>();
+```
+
+---
+
+## Step 4: Decorator Pattern
+
+Add behavior without modifying code:
+
+```csharp
+// Original
+public interface ICustomerRepository
+{
+    Task<Customer?> GetAsync(int id);
+}
+
+// Decorator: Add caching
+public class CachedCustomerRepository : ICustomerRepository
+{
+    private readonly ICustomerRepository _inner;
+    private readonly IMemoryCache _cache;
+    
+    public CachedCustomerRepository(ICustomerRepository inner, IMemoryCache cache)
+    {
+        _inner = inner;
+        _cache = cache;
+    }
+    
+    public async Task<Customer?> GetAsync(int id)
+    {
+        if (_cache.TryGetValue($"customer_{id}", out Customer? cached))
+            return cached;
+        
+        var customer = await _inner.GetAsync(id);
+        if (customer != null)
+            _cache.Set($"customer_{id}", customer, TimeSpan.FromMinutes(10));
+        
+        return customer;
+    }
+}
+
+// Extension to wrap easily
+public static class ServiceCollectionExtensions
+{
+    public static IServiceCollection Decorate<TInterface, TDecorator>(
+        this IServiceCollection services)
+        where TInterface : class
+        where TDecorator : class, TInterface
+    {
+        // Implementation here
+        return services;
+    }
+}
+```
+
+---
+
+## Step 5: Mini Challenge
+
+**Refactor your Day 14 API to add:**
+
+1. **Lifetimes:** Use appropriate lifetimes for your services
+2. **Factories:** Create a factory for complex service initialization
+3. **Service hierarchy:** Create an `OrderService` that uses both Customer and WorkOrder repos
+4. **Decorators:** Add logging decorator to repositories
+5. **Conditional registration:** Different email service for dev vs production
+
+---
+
+## ✅ Checklist
+
+- [ ] Understand lifetimes (Transient, Scoped, Singleton)
+- [ ] Create services with appropriate lifetimes
+- [ ] Use factory pattern for complex services
+- [ ] Build service hierarchies
+- [ ] Implement decorator pattern
+- [ ] Do conditional registration based on environment
+- [ ] Code compiles without errors
+- [ ] Tested that DI resolves correctly
+- [ ] Compared to Day 15 Complete example
+
+---
+
+## 🔗 Next Steps
+
+Day 16: **Configuration & Options Pattern** — Manage settings professionally.
+
+---
+
+## 📚 Resources
+
+- <a href="https://docs.microsoft.com/dotnet/core/dependency-injection" target="_blank">Microsoft DI Documentation</a>
+- <a href="https://docs.microsoft.com/dotnet/core/dependency-injection/dependency-injection-guidelines" target="_blank">DI Best Practices</a>
+
+---
+
+**Your API is about to get smarter.** See you on Day 16! 🚀
 
