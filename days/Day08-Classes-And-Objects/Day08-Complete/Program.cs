@@ -1,177 +1,100 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
+using ServiceHub.Day08.Data;
+using ServiceHub.Day08.Repositories;
+using ServiceHub.Day08.Services;
 
-// Day 08 — Dependency Injection: Complete Example
-// ServiceHub with DI container, repositories, and services
-// Demonstrates: Interfaces, constructor injection, DI registration
+// Day 08 — Dependency Injection Foundations
+// Building the ServiceHub API starting with DI + basic endpoints
+// Demonstrates: Constructor injection, interfaces, DI container, basic endpoints
 
-Console.WriteLine("╔════════════════════════════════════════╗");
-Console.WriteLine("║  ServiceHub - Dependency Injection v1  ║");
-Console.WriteLine("╚════════════════════════════════════════╝\n");
+var builder = WebApplicationBuilder.CreateBuilder(args);
 
-// ========== SETUP: DI CONTAINER ==========
-var services = new ServiceCollection();
+// ========== DEPENDENCY INJECTION SETUP ==========
+// This is the core of Day 08: Learning to register and inject dependencies
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<WorkOrderService>();
 
-// Register repositories
-services.AddScoped<ICustomerRepository, CustomerRepository>();
-services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
+// Swagger for documentation
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-// Register services
-services.AddScoped<CustomerService>();
-services.AddScoped<WorkOrderService>();
+var app = builder.Build();
 
-var provider = services.BuildServiceProvider();
-
-// ========== GET SERVICES FROM DI CONTAINER ==========
-var customerService = provider.GetRequiredService<CustomerService>();
-var workOrderService = provider.GetRequiredService<WorkOrderService>();
-
-// ========== USE SERVICES ==========
-Console.WriteLine("--- Adding Customers ---");
-customerService.CreateCustomer(1, "Alice Johnson", "alice@example.com");
-customerService.CreateCustomer(2, "Bob Smith", "bob@example.com");
-customerService.CreateCustomer(3, "Charlie Brown", "charlie@example.com");
-Console.WriteLine();
-
-Console.WriteLine("--- All Customers ---");
-foreach (var customer in customerService.ListCustomers())
+// ========== MIDDLEWARE ==========
+if (app.Environment.IsDevelopment())
 {
-    Console.WriteLine($"• ID {customer.Id}: {customer.Name} ({customer.Email})");
-}
-Console.WriteLine();
-
-Console.WriteLine("--- Adding Work Orders ---");
-workOrderService.CreateWorkOrder(1, 1, "Gutter Cleaning", "Scheduled");
-workOrderService.CreateWorkOrder(2, 2, "Lawn Mowing", "Scheduled");
-workOrderService.CreateWorkOrder(3, 1, "Window Washing", "Scheduled");
-Console.WriteLine();
-
-Console.WriteLine("--- All Work Orders ---");
-foreach (var order in workOrderService.ListWorkOrders())
-{
-    Console.WriteLine($"• ID {order.Id}: {order.Description} for Customer {order.CustomerId} ({order.Status})");
-}
-Console.WriteLine();
-
-Console.WriteLine("--- Find Customer ---");
-var found = customerService.GetCustomer(1);
-if (found != null)
-{
-    Console.WriteLine($"Found: {found.Name}");
-}
-Console.WriteLine();
-
-Console.WriteLine("✅ Day 08 Complete!");
-
-// ========== INTERFACES ==========
-interface ICustomerRepository
-{
-    void AddCustomer(Customer customer);
-    Customer? GetCustomer(int id);
-    List<Customer> GetAll();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-interface IWorkOrderRepository
-{
-    void AddWorkOrder(WorkOrder order);
-    WorkOrder? GetWorkOrder(int id);
-    List<WorkOrder> GetAll();
-}
+app.UseHttpsRedirection();
 
-// ========== IMPLEMENTATIONS ==========
-class CustomerRepository : ICustomerRepository
-{
-    private List<Customer> customers = new();
-    private int nextId = 1;
-    
-    public void AddCustomer(Customer customer)
-    {
-        customer.Id = nextId++;
-        customers.Add(customer);
-    }
-    
-    public Customer? GetCustomer(int id) => customers.FirstOrDefault(c => c.Id == id);
-    public List<Customer> GetAll() => customers;
-}
+// ========== ENDPOINTS (Day 08: Basic CRUD with DI) ==========
 
-class WorkOrderRepository : IWorkOrderRepository
-{
-    private List<WorkOrder> orders = new();
-    private int nextId = 1;
-    
-    public void AddWorkOrder(WorkOrder order)
-    {
-        order.Id = nextId++;
-        orders.Add(order);
-    }
-    
-    public WorkOrder? GetWorkOrder(int id) => orders.FirstOrDefault(o => o.Id == id);
-    public List<WorkOrder> GetAll() => orders;
-}
+// Health check
+app.MapGet("/health", () => Results.Ok(new { status = "ok" }))
+    .WithName("Health")
+    .WithOpenApi();
 
-// ========== SERVICES (WITH INJECTED DEPENDENCIES) ==========
-class CustomerService
+// Customers
+app.MapGet("/customers", async (CustomerService service) =>
 {
-    private ICustomerRepository repository;
-    
-    // Constructor injection
-    public CustomerService(ICustomerRepository repo)
-    {
-        repository = repo;
-    }
-    
-    public void CreateCustomer(int id, string name, string email)
-    {
-        var customer = new Customer { Id = id, Name = name, Email = email };
-        repository.AddCustomer(customer);
-        Console.WriteLine($"  ✓ Created customer: {name}");
-    }
-    
-    public Customer? GetCustomer(int id) => repository.GetCustomer(id);
-    public List<Customer> ListCustomers() => repository.GetAll();
-}
+    var customers = await service.GetAllAsync();
+    return Results.Ok(customers);
+})
+.WithName("GetCustomers")
+.WithOpenApi();
 
-class WorkOrderService
+app.MapGet("/customers/{id}", async (int id, CustomerService service) =>
 {
-    private IWorkOrderRepository repository;
-    
-    // Constructor injection
-    public WorkOrderService(IWorkOrderRepository repo)
-    {
-        repository = repo;
-    }
-    
-    public void CreateWorkOrder(int id, int customerId, string description, string status)
-    {
-        var order = new WorkOrder 
-        { 
-            Id = id, 
-            CustomerId = customerId, 
-            Description = description, 
-            Status = status 
-        };
-        repository.AddWorkOrder(order);
-        Console.WriteLine($"  ✓ Created work order: {description}");
-    }
-    
-    public WorkOrder? GetWorkOrder(int id) => repository.GetWorkOrder(id);
-    public List<WorkOrder> ListWorkOrders() => repository.GetAll();
-}
+    var customer = await service.GetAsync(id);
+    return customer != null ? Results.Ok(customer) : Results.NotFound();
+})
+.WithName("GetCustomerById")
+.WithOpenApi();
 
-// ========== DATA MODELS ==========
-class Customer
+app.MapPost("/customers", async (CreateCustomerRequest request, CustomerService service) =>
 {
-    public int Id { get; set; }
-    public string Name { get; set; } = "";
-    public string Email { get; set; } = "";
-}
+    if (string.IsNullOrWhiteSpace(request.Name) || string.IsNullOrWhiteSpace(request.Email))
+        return Results.BadRequest("Name and Email required");
 
-class WorkOrder
+    var customer = await service.CreateAsync(request.Name, request.Email);
+    return Results.Created($"/customers/{customer.Id}", customer);
+})
+.WithName("CreateCustomer")
+.WithOpenApi();
+
+// Work Orders
+app.MapGet("/workorders", async (WorkOrderService service) =>
 {
-    public int Id { get; set; }
-    public int CustomerId { get; set; }
-    public string Description { get; set; } = "";
-    public string Status { get; set; } = "Scheduled";
-}
+    var orders = await service.GetAllAsync();
+    return Results.Ok(orders);
+})
+.WithName("GetWorkOrders")
+.WithOpenApi();
+
+app.MapGet("/workorders/{id}", async (int id, WorkOrderService service) =>
+{
+    var order = await service.GetAsync(id);
+    return order != null ? Results.Ok(order) : Results.NotFound();
+})
+.WithName("GetWorkOrderById")
+.WithOpenApi();
+
+app.MapPost("/workorders", async (CreateWorkOrderRequest request, WorkOrderService service) =>
+{
+    if (request.CustomerId <= 0 || string.IsNullOrWhiteSpace(request.Description))
+        return Results.BadRequest("CustomerId and Description required");
+
+    var order = await service.CreateAsync(request.CustomerId, request.Description);
+    return Results.Created($"/workorders/{order.Id}", order);
+})
+.WithName("CreateWorkOrder")
+.WithOpenApi();
+
+app.Run();
+
+// ========== DTOs ==========
+record CreateCustomerRequest(string Name, string Email);
+record CreateWorkOrderRequest(int CustomerId, string Description);
