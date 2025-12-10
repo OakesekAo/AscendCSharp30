@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="days\Day08-Classes-And-Objects\Day08-Complete\Day08-Complete.csproj" />
+    <None Include="days\Day09-Interfaces-And-Abstraction\Day09-Complete\Day09-Complete.csproj" />
+    <None Include="days\Day10-Inheritance-And-Polymorphism\Day10-Complete\Day10-Complete.csproj" />
+    <None Include="days\Day11-Polymorphism-Advanced\Day11-Complete\Day11-Complete.csproj" />
+    <None Include="days\Day12-Encapsulation\Day12-Complete\Day12-Complete.csproj" />
+    <None Include="ServiceHub.API\ServiceHub.API.csproj" />
+  </ItemGroup>
+
 </Project>

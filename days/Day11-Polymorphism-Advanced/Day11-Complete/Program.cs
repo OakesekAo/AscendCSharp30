@@ -7,7 +7,7 @@ using ServiceHub.Day11.Services;
 // Building on Day 10: Adding search and filtering capabilities
 // Demonstrates: Repository search methods, query filtering, LINQ operations
 
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();

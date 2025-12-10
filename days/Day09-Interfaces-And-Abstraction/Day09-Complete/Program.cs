@@ -7,7 +7,7 @@ using ServiceHub.Day09.Services;
 // Building on Day 08: Adding DTOs, organizing endpoints
 // Demonstrates: DTO pattern, organized endpoints, mapper extension methods
 
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 // ========== DEPENDENCY INJECTION SETUP ==========
 // Same as Day 08, but services now use DTOs for responses

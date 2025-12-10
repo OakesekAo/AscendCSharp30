@@ -6,7 +6,7 @@ using ServiceHub.Day08.Services;
 // Building the ServiceHub API starting with DI + basic endpoints
 // Demonstrates: Constructor injection, interfaces, DI container, basic endpoints
 
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 // ========== DEPENDENCY INJECTION SETUP ==========
 // This is the core of Day 08: Learning to register and inject dependencies

@@ -7,7 +7,7 @@ using ServiceHub.Day10.Services;
 // Building on Day 09: Adding professional error responses and validation
 // Demonstrates: Error DTO, validation methods, try-catch patterns, status codes
 
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 // ========== DEPENDENCY INJECTION SETUP ==========
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
