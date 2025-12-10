@@ -1,15 +1,57 @@
-# Day17-Complete — Logging
+# Day 17 — Logging with Serilog (Complete)
 
-This is the runnable, completed state for Day17.
+## 🎯 Building on Day 16
 
-To run:
-1. cd Day17-Complete
-2. dotnet restore
-3. dotnet run
+This is the **complete, working implementation** of Day 17: **structured logging with Serilog**.
 
-Notes
-- This project targets .NET 10.
-- Replace or expand the project with further exercises as desired.
+**Key difference from Day 16:**
+- Day 16: Basic .NET logging
+- Day 17: Structured logging with Serilog + file output
+
+---
+
+## ✅ Features Implemented
+
+- ✅ Serilog configuration in appsettings.json
+- ✅ Console and file sinks
+- ✅ Log levels and filtering
+- ✅ Structured logging with properties
+- ✅ ILogger<T> injection throughout
+- ✅ Log enrichment (timestamp, thread, machine)
+- ✅ Rolling file appender
+
+---
+
+## 🚀 Run This Code
+
+```bash
+dotnet run
+```
+
+Open: **https://localhost:5001/swagger**
+
+Logs will appear in console and **logs/servicehub-[DATE].txt**
+
+---
+
+## 📊 Serilog Features
+
+- ✅ Structured logging (not just strings)
+- ✅ Multiple sinks (Console, File)
+- ✅ Log levels per namespace
+- ✅ Rich enrichment
+- ✅ Rolling files by day
+- ✅ Colored console output
+
+---
+
+## 🔗 Next: Day 18
+
+Day 18 will add **HttpClient & External APIs**.
+
+---
+
+**Production logging is critical!** 🚀
 
 ---
 
