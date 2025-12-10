@@ -1,192 +1,273 @@
-# Day 09 — Minimal API Foundations
+# Day 09 — DTOs & API Contracts
 
-## 🚀 Week 2: Building ServiceHub API v0.1
+## 🚀 Building on Day 08
 
 **Maya's Message:**
-> "You have solid DI foundations. Now let's expose the data layer via REST API. Your first endpoints."
+> "Your Day 08 API works, but we need to be more careful about what we expose. DTOs separate our internal data from what we show clients."
 
-Today, you'll build your **first Minimal API endpoints** using ASP.NET Core — exposing your repositories and services via HTTP.
+Today, you'll learn **DTOs (Data Transfer Objects)** — a professional pattern for separating API contracts from domain models.
 
 ---
 
 ## 🎯 Learning Objectives
 
-1. **Understand Minimal APIs** — Lightweight REST endpoint building
-2. **Create route handlers** — GET, POST endpoints
-3. **Inject services** — Use DI in endpoints
-4. **Return JSON** — Serialize responses
-5. **Accept input** — Query params, body data
-6. **Apply to ServiceHub** — Customer and work order endpoints
+1. **Understand the problem:** Exposing domain models directly is brittle
+2. **Learn DTOs:** Separate API contracts from domain models
+3. **Create mappers:** Convert between domain and API models
+4. **Organize endpoints:** Group endpoints by resource
+5. **Handle validation:** Validate inputs with proper error responses
+6. **Apply to ServiceHub:** Professional API contracts
 
 ---
 
 ## 📋 Prerequisites
 
 Before you start:
-- Day 08 complete (understand DI)
-- Familiar with REST concepts (GET, POST, HTTP status codes)
+- Day 08 complete and working
+- Understand the N-tier architecture from Day 08
 - ~90 minutes
 
 ---
 
-## Setup
+## What Changed Since Day 08
 
-```bash
-mkdir Day09-MinimalAPI
-cd Day09-MinimalAPI
-dotnet new web
+Day 08 had:
+```
+Program.cs
+├── DI Container setup
+├── Basic endpoints (GET /customers, POST /customers, etc.)
+├── Inline DTOs (record types at bottom)
+└── All in one file
 ```
 
-This creates an ASP.NET Core web project (not console).
+Day 09 adds:
+```
+DTOs/                     (NEW!)
+├── Requests/
+│   ├── CreateCustomerRequest.cs
+│   └── CreateWorkOrderRequest.cs
+└── Responses/
+    ├── CustomerResponse.cs
+    └── WorkOrderResponse.cs
+
+Endpoints/                (NEW!)
+├── CustomerEndpoints.cs
+├── WorkOrderEndpoints.cs
+└── AnalyticsEndpoints.cs
+
+(Models, Repositories, Services stay the same)
+```
 
 ---
 
-## Step 1: What Are Minimal APIs?
+## Step 1: Why DTOs?
 
-Minimal APIs are a lightweight way to build REST endpoints without controllers:
+**Problem: Exposing domain models directly**
 
 ```csharp
-// Traditional controller (verbose)
-[ApiController]
-[Route("api/[controller]")]
-public class CustomersController : ControllerBase
+// Day 08: Domain model directly in API response
+public class Customer
 {
-    public IActionResult GetAll() => Ok(data);
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string InternalNotes { get; set; }    // Should be hidden!
+    public DateTime CreatedAt { get; set; }      // Might expose too much
 }
 
-// Minimal API (concise)
-app.MapGet("/api/customers", () => data);
+// Client sees InternalNotes - security issue!
 ```
 
-**Minimal APIs are modern, clean, and perfect for learning.**
-
----
-
-## Step 2: Basic Endpoints
+**Solution: DTOs for API contracts**
 
 ```csharp
-var builder = WebApplicationBuilder.CreateBuilder(args);
-var app = builder.Build();
+// Request (what client sends)
+record CreateCustomerRequest(string Name, string Email);
 
-// GET endpoint
-app.MapGet("/", () => "Hello from ServiceHub API!");
+// Response (what API returns)
+record CustomerResponse(int Id, string Name, string Email);
 
-app.Run();
-```
-
-**Result:**
-- GET `http://localhost:5000/` returns `"Hello from ServiceHub API!"`
-
----
-
-## Step 3: Return JSON
-
-```csharp
-app.MapGet("/customers", () => new
+// Domain model (internal only)
+class Customer
 {
-    id = 1,
-    name = "Alice",
-    email = "alice@example.com"
-});
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string InternalNotes { get; set; }    // Client never sees this
+}
 ```
 
-**Result:** Automatically serialized to JSON
-```json
-{"id":1,"name":"Alice","email":"alice@example.com"}
+**Benefits:**
+- ✅ Control what's exposed
+- ✅ Separate API from domain
+- ✅ Easy to change domain without breaking clients
+- ✅ Professional, secure API design
+
+---
+
+## Step 2: Create Request DTOs
+
+```csharp
+// DTOs/Requests/CreateCustomerRequest.cs
+namespace ServiceHub.DTOs.Requests;
+
+public record CreateCustomerRequest(string Name, string Email);
+```
+
+```csharp
+// DTOs/Requests/CreateWorkOrderRequest.cs
+namespace ServiceHub.DTOs.Requests;
+
+public record CreateWorkOrderRequest(int CustomerId, string Description);
+```
+
+```csharp
+// DTOs/Requests/UpdateWorkOrderStatusRequest.cs
+namespace ServiceHub.DTOs.Requests;
+
+public record UpdateWorkOrderStatusRequest(string Status);
 ```
 
 ---
 
-## Step 4: Inject Services
+## Step 3: Create Response DTOs
 
 ```csharp
-// Register services
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-builder.Services.AddScoped<CustomerService>();
+// DTOs/Responses/CustomerResponse.cs
+namespace ServiceHub.DTOs.Responses;
 
-var app = builder.Build();
-
-// Use injected service
-app.MapGet("/customers", (CustomerService service) => 
-    service.ListCustomers()
-);
+public record CustomerResponse(int Id, string Name, string Email);
 ```
 
-**DI container automatically provides the service!**
+```csharp
+// DTOs/Responses/WorkOrderResponse.cs
+namespace ServiceHub.DTOs.Responses;
+
+public record WorkOrderResponse(int Id, int CustomerId, string Description, string Status);
+```
 
 ---
 
-## Step 5: POST Endpoint (Create)
+## Step 4: Create Mappers (Extension Methods)
+
+**Convert domain models to DTOs:**
 
 ```csharp
-app.MapPost("/customers", (Customer customer, CustomerService service) =>
+// In CustomerService.cs
+public static class CustomerExtensions
 {
-    service.CreateCustomer(customer.Id, customer.Name, customer.Email);
-    return Results.Created($"/customers/{customer.Id}", customer);
-});
+    public static CustomerResponse ToResponse(this Customer customer)
+        => new(customer.Id, customer.Name, customer.Email);
+}
+
+// Usage
+var customer = await _repository.GetAsync(1);
+var response = customer.ToResponse();  // Domain → DTO
 ```
 
 ---
 
-## Step 6: Route Parameters
+## Step 5: Organize Endpoints
+
+**Instead of everything in Program.cs:**
 
 ```csharp
-app.MapGet("/customers/{id}", (int id, CustomerService service) =>
+// Endpoints/CustomerEndpoints.cs
+namespace ServiceHub.Endpoints;
+
+public static class CustomerEndpoints
 {
-    var customer = service.GetCustomer(id);
-    return customer != null ? Results.Ok(customer) : Results.NotFound();
-});
+    public static void MapCustomerEndpoints(this WebApplication app)
+    {
+        var group = app.MapGroup("/customers")
+            .WithTags("Customers");
+
+        group.MapGet("/", GetAll)
+            .WithName("GetCustomers")
+            .WithOpenApi();
+
+        group.MapGet("/{id}", GetById)
+            .WithName("GetCustomer")
+            .WithOpenApi();
+
+        group.MapPost("/", Create)
+            .WithName("CreateCustomer")
+            .WithOpenApi();
+    }
+
+    private static async Task<IResult> GetAll(CustomerService service)
+    {
+        var customers = await service.GetAllAsync();
+        return Results.Ok(customers.Select(c => c.ToResponse()));
+    }
+
+    private static async Task<IResult> GetById(int id, CustomerService service)
+    {
+        var customer = await service.GetAsync(id);
+        return customer != null
+            ? Results.Ok(customer.ToResponse())
+            : Results.NotFound();
+    }
+
+    private static async Task<IResult> Create(CreateCustomerRequest request, CustomerService service)
+    {
+        var customer = await service.CreateAsync(request.Name, request.Email);
+        return Results.Created($"/customers/{customer.Id}", customer.ToResponse());
+    }
+}
+
+// Program.cs
+app.MapCustomerEndpoints();
+app.MapWorkOrderEndpoints();
 ```
+
+**Benefits:**
+- ✅ Program.cs stays clean
+- ✅ Each endpoint file handles one resource
+- ✅ Easy to find and update endpoints
+- ✅ Professional code organization
 
 ---
 
-## Mini Challenge: ServiceHub API v0.1
+## Step 6: Mini Challenge
 
-**Build these endpoints:**
+**Refactor your Day 08 code to add:**
 
-1. `GET /customers` — List all customers
-2. `GET /customers/{id}` — Get one customer
-3. `POST /customers` — Create customer
-4. `GET /workorders` — List all work orders
-5. `GET /workorders/{id}` — Get one work order
-6. `POST /workorders` — Create work order
-
-**Example requests:**
-```bash
-# Get all customers
-GET http://localhost:5000/customers
-
-# Create customer
-POST http://localhost:5000/customers
-Content-Type: application/json
-{"id":1,"name":"Alice","email":"alice@example.com"}
-```
+1. Create `DTOs/Requests/` folder with CreateCustomerRequest, CreateWorkOrderRequest
+2. Create `DTOs/Responses/` folder with CustomerResponse, WorkOrderResponse
+3. Add mapper extension methods in Services
+4. Create `Endpoints/CustomerEndpoints.cs` and `Endpoints/WorkOrderEndpoints.cs`
+5. Call `app.MapCustomerEndpoints()` and `app.MapWorkOrderEndpoints()` in Program.cs
+6. Update endpoints to use DTOs instead of domain models
+7. Test in Swagger - should work exactly the same!
 
 ---
 
 ## ✅ Checklist
 
-- [ ] You understand Minimal APIs
-- [ ] You can create GET endpoints
-- [ ] You can create POST endpoints
-- [ ] You can inject services into endpoints
-- [ ] You return JSON responses
-- [ ] You handle route parameters
-- [ ] You built the customer/work order endpoints
+- [ ] Created DTOs/Requests/ folder with request records
+- [ ] Created DTOs/Responses/ folder with response records
+- [ ] Created mapper extension methods
+- [ ] Organized endpoints into separate files
+- [ ] Updated Program.cs to call MapCustomerEndpoints(), etc.
+- [ ] All endpoints use DTOs for requests/responses
+- [ ] Code compiles without errors
+- [ ] Tested in Swagger - endpoints work correctly
+- [ ] Compared to Day 09 Complete example
 
 ---
 
 ## 🔗 Next Steps
 
-Day 10: **DTOs & API Contracts** — Separate API models from domain models.
+Day 10: **Error Handling & Validation** — Professional error responses.
 
 ---
 
 ## 📚 Resources
 
-- <a href="https://dotnet.microsoft.com/learn/" target="_blank">Getting Started with .NET</a>
+- <a href="https://docs.microsoft.com/dotnet/csharp/language-reference/builtin-types/record" target="_blank">C# Records</a>
 - <a href="https://github.com/OakesekAo/AscendCSharp30" target="_blank">AscendCSharp30 Repository</a>
 
 ---
 
-**You're building ServiceHub's backbone.** See you on Day 10! 🚀
+**You're building a professional API.** See you on Day 10! 🚀
