@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#day17-starter-logging" class="md-skip">
+        <a href="#day-17-logging-with-serilog" class="md-skip">
           Skip to content
         </a>
       
@@ -950,6 +950,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 17 — Logging
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="Day17-Logging.html" class="md-nav__link md-nav__link--active">
         
   
@@ -966,6 +984,157 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#production-grade-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Production-Grade Logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-since-day-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed Since Day 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-serilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Install Serilog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-serilog-in-programcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Configure Serilog in Program.cs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-in-appsettingsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Configure in appsettings.json
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-use-ilogger-in-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Use ILogger in Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Mini Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1529,6 +1698,146 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#production-grade-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Production-Grade Logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-since-day-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed Since Day 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-serilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Install Serilog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-serilog-in-programcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Configure Serilog in Program.cs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-in-appsettingsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Configure in appsettings.json
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-use-ilogger-in-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Use ILogger in Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Mini Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1547,16 +1856,183 @@
   
 
 
-<h1 id="day17-starter-logging">Day17-Starter — Logging</h1>
-<p>Objectives
-- Follow the daily learning objectives and complete the starter tasks.</p>
-<p>Starter steps
-1. Read the objectives.
-2. Open this folder in Visual Studio (<strong>Open Folder</strong> recommended) or open the provided project.
-3. Implement the exercises in this folder following the TODOs.</p>
-<p>Boilerplate
-- This folder contains minimal code and instructions to get started.
-- Do not commit build artifacts; keep only source and instructions.</p>
+<h1 id="day-17-logging-with-serilog">Day 17 — Logging with Serilog</h1>
+<h2 id="production-grade-logging">🚀 Production-Grade Logging</h2>
+<p><strong>Maya's Message:</strong></p>
+<blockquote>
+<p>"Configuration is great, but how do you debug production issues? Logging is your window into what's happening. Serilog gives us structured logging that's powerful and flexible."</p>
+</blockquote>
+<p>Today, you'll learn <strong>structured logging with Serilog</strong>: configuration, log levels, filtering, and production-ready logging patterns.</p>
+<hr />
+<h2 id="learning-objectives">🎯 Learning Objectives</h2>
+<ol>
+<li><strong>Understand structured logging:</strong> Logs as structured data, not strings</li>
+<li><strong>Configure Serilog:</strong> Rich configuration options</li>
+<li><strong>Log levels and filtering:</strong> Debug, Information, Warning, Error, Fatal</li>
+<li><strong>Inject ILogger:</strong> Use dependency injection for logging</li>
+<li><strong>Sinks and enrichment:</strong> Output logs to files, console, etc.</li>
+<li><strong>Production patterns:</strong> Security and performance</li>
+</ol>
+<hr />
+<h2 id="prerequisites">📋 Prerequisites</h2>
+<ul>
+<li>Days 01-16 complete</li>
+<li>Comfortable with DI and configuration</li>
+<li>Understanding of appsettings.json</li>
+<li>~90 minutes</li>
+</ul>
+<hr />
+<h2 id="what-changed-since-day-16">What Changed Since Day 16</h2>
+<p>Day 16 had basic .NET logging:</p>
+<pre><code class="language-csharp">// Basic logging
+var logger = serviceProvider.GetService&lt;ILogger&lt;MyService&gt;&gt;();
+logger.LogInformation(&quot;User logged in&quot;);
+</code></pre>
+<p>Day 17 adds Serilog:</p>
+<pre><code class="language-csharp">// Install Serilog
+builder.Host.UseSerilog((context, config) =&gt;
+    config.ReadFrom.Configuration(context.Configuration));
+
+// Structured logging with Serilog
+logger.LogInformation(&quot;User {UserId} logged in at {Timestamp}&quot;, userId, DateTime.UtcNow);
+
+// Serilog configuration in appsettings.json
+{
+  &quot;Serilog&quot;: {
+    &quot;MinimumLevel&quot;: &quot;Information&quot;,
+    &quot;WriteTo&quot;: [
+      { &quot;Name&quot;: &quot;Console&quot; },
+      { &quot;Name&quot;: &quot;File&quot;, &quot;Args&quot;: { &quot;path&quot;: &quot;logs/app.txt&quot; } }
+    ]
+  }
+}
+</code></pre>
+<hr />
+<h2 id="step-1-install-serilog">Step 1: Install Serilog</h2>
+<pre><code class="language-bash">dotnet add package Serilog
+dotnet add package Serilog.AspNetCore
+dotnet add package Serilog.Sinks.Console
+dotnet add package Serilog.Sinks.File
+</code></pre>
+<hr />
+<h2 id="step-2-configure-serilog-in-programcs">Step 2: Configure Serilog in Program.cs</h2>
+<pre><code class="language-csharp">using Serilog;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+builder.Host.UseSerilog((context, config) =&gt;
+    config.ReadFrom.Configuration(context.Configuration));
+
+// Rest of DI setup...
+
+var app = builder.Build();
+app.Run();
+</code></pre>
+<hr />
+<h2 id="step-3-configure-in-appsettingsjson">Step 3: Configure in appsettings.json</h2>
+<pre><code class="language-json">{
+  &quot;Serilog&quot;: {
+    &quot;MinimumLevel&quot;: {
+      &quot;Default&quot;: &quot;Information&quot;,
+      &quot;Override&quot;: {
+        &quot;Microsoft&quot;: &quot;Warning&quot;,
+        &quot;System&quot;: &quot;Warning&quot;
+      }
+    },
+    &quot;WriteTo&quot;: [
+      {
+        &quot;Name&quot;: &quot;Console&quot;,
+        &quot;Args&quot;: {
+          &quot;theme&quot;: &quot;Ansi&quot;
+        }
+      },
+      {
+        &quot;Name&quot;: &quot;File&quot;,
+        &quot;Args&quot;: {
+          &quot;path&quot;: &quot;logs/app-.txt&quot;,
+          &quot;rollingInterval&quot;: &quot;Day&quot;,
+          &quot;outputTemplate&quot;: &quot;{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}&quot;
+        }
+      }
+    ],
+    &quot;Enrich&quot;: [&quot;FromLogContext&quot;, &quot;WithMachineName&quot;, &quot;WithThreadId&quot;]
+  }
+}
+</code></pre>
+<hr />
+<h2 id="step-4-use-ilogger-in-services">Step 4: Use ILogger in Services</h2>
+<pre><code class="language-csharp">public class CustomerService
+{
+    private readonly ICustomerRepository _repository;
+    private readonly ILogger&lt;CustomerService&gt; _logger;
+
+    public CustomerService(
+        ICustomerRepository repository,
+        ILogger&lt;CustomerService&gt; logger)
+    {
+        _repository = repository;
+        _logger = logger;
+    }
+
+    public async Task&lt;Customer&gt; CreateAsync(string name, string email)
+    {
+        _logger.LogInformation(&quot;Creating customer: {Name} ({Email})&quot;, name, email);
+
+        try
+        {
+            var customer = new Customer { Name = name, Email = email };
+            await _repository.AddAsync(customer);
+
+            _logger.LogInformation(&quot;Customer created: {CustomerId}&quot;, customer.Id);
+            return customer;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, &quot;Failed to create customer: {Name}&quot;, name);
+            throw;
+        }
+    }
+}
+</code></pre>
+<hr />
+<h2 id="step-5-mini-challenge">Step 5: Mini Challenge</h2>
+<p><strong>Add Serilog logging to your Day 16 API:</strong></p>
+<ol>
+<li>Install Serilog packages</li>
+<li>Configure Serilog in Program.cs</li>
+<li>Create appsettings.json with Serilog configuration</li>
+<li>Inject ILogger into services</li>
+<li>Add structured logging to key methods</li>
+<li>Test that logs appear in console and file</li>
+<li>Create appsettings.Production.json with different log level</li>
+<li>Verify logs are structured and searchable</li>
+</ol>
+<hr />
+<h2 id="checklist">✅ Checklist</h2>
+<ul>
+<li>[ ] Installed Serilog packages</li>
+<li>[ ] Configured Serilog in Program.cs</li>
+<li>[ ] Created Serilog config in appsettings.json</li>
+<li>[ ] Injected ILogger into services</li>
+<li>[ ] Added structured logging throughout</li>
+<li>[ ] Tested console and file output</li>
+<li>[ ] Created appsettings.Production.json</li>
+<li>[ ] Different log levels per environment</li>
+<li>[ ] Code compiles without errors</li>
+<li>[ ] Compared to Day 17 Complete</li>
+</ul>
+<hr />
+<h2 id="next-steps">🔗 Next Steps</h2>
+<p>Day 18: <strong>HttpClient &amp; External APIs</strong> — Call external services.</p>
+<hr />
+<h2 id="resources">📚 Resources</h2>
+<ul>
+<li><a href="https://serilog.net" target="_blank">Serilog Official</a></li>
+<li><a href="https://github.com/serilog/serilog-aspnetcore" target="_blank">Serilog for ASP.NET Core</a></li>
+</ul>
+<hr />
+<p><strong>Structured logging is the key to production success.</strong> See you on Day 18! 🚀</p>
 
 
 
