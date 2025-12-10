@@ -7,7 +7,7 @@ using ServiceHub.Day12.Services;
 // Building on Day 11: Adding analytics and statistics endpoints
 // Demonstrates: Aggregation, statistics calculation, advanced queries
 
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
