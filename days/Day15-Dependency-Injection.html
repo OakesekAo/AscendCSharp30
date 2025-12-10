@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#day-15-ef-core-setup-servicehub-database" class="md-skip">
+        <a href="#day-15-advanced-dependency-injection-patterns" class="md-skip">
           Skip to content
         </a>
       
@@ -945,10 +945,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#week-3-full-stack-sprint-begins" class="md-nav__link">
+  <a href="#week-3-scaling-your-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 Week 3: Full-Stack Sprint Begins
+        🚀 Week 3: Scaling Your Architecture
       
     </span>
   </a>
@@ -959,7 +959,7 @@
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Learning Objectives
+        🎯 Learning Objectives
       
     </span>
   </a>
@@ -970,7 +970,7 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        📋 Prerequisites
       
     </span>
   </a>
@@ -978,10 +978,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#starter-steps" class="md-nav__link">
+  <a href="#what-changed-since-day-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Starter Steps
+        What Changed Since Day 14
       
     </span>
   </a>
@@ -989,10 +989,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters-for-servicehub" class="md-nav__link">
+  <a href="#step-1-understand-di-lifetimes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters for ServiceHub
+        Step 1: Understand DI Lifetimes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Understand DI Lifetimes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transient-new-instance-every-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transient - New instance every time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoped-one-per-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoped - One per request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singleton-one-for-entire-application-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Singleton - One for entire application lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-factory-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Factory Pattern
       
     </span>
   </a>
@@ -1000,10 +1050,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next" class="md-nav__link">
+  <a href="#step-3-service-hierarchies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next
+        Step 3: Service Hierarchies
       
     </span>
   </a>
@@ -1011,10 +1061,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#boilerplate" class="md-nav__link">
+  <a href="#step-4-decorator-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Boilerplate
+        Step 4: Decorator Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Mini Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Resources
       
     </span>
   </a>
@@ -1650,10 +1744,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#week-3-full-stack-sprint-begins" class="md-nav__link">
+  <a href="#week-3-scaling-your-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 Week 3: Full-Stack Sprint Begins
+        🚀 Week 3: Scaling Your Architecture
       
     </span>
   </a>
@@ -1664,7 +1758,7 @@
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Learning Objectives
+        🎯 Learning Objectives
       
     </span>
   </a>
@@ -1675,7 +1769,7 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        📋 Prerequisites
       
     </span>
   </a>
@@ -1683,10 +1777,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#starter-steps" class="md-nav__link">
+  <a href="#what-changed-since-day-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Starter Steps
+        What Changed Since Day 14
       
     </span>
   </a>
@@ -1694,10 +1788,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters-for-servicehub" class="md-nav__link">
+  <a href="#step-1-understand-di-lifetimes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters for ServiceHub
+        Step 1: Understand DI Lifetimes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Understand DI Lifetimes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transient-new-instance-every-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transient - New instance every time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoped-one-per-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoped - One per request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singleton-one-for-entire-application-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Singleton - One for entire application lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-factory-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Factory Pattern
       
     </span>
   </a>
@@ -1705,10 +1849,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next" class="md-nav__link">
+  <a href="#step-3-service-hierarchies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next
+        Step 3: Service Hierarchies
       
     </span>
   </a>
@@ -1716,10 +1860,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#boilerplate" class="md-nav__link">
+  <a href="#step-4-decorator-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Boilerplate
+        Step 4: Decorator Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Mini Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Resources
       
     </span>
   </a>
@@ -1746,52 +1934,229 @@
   
 
 
-<h1 id="day-15-ef-core-setup-servicehub-database">Day 15 — EF Core Setup (ServiceHub Database)</h1>
-<h2 id="week-3-full-stack-sprint-begins">🚀 Week 3: Full-Stack Sprint Begins</h2>
+<h1 id="day-15-advanced-dependency-injection-patterns">Day 15 — Advanced Dependency Injection Patterns</h1>
+<h2 id="week-3-scaling-your-architecture">🚀 Week 3: Scaling Your Architecture</h2>
 <p><strong>Maya's Message:</strong></p>
 <blockquote>
-<p>"We have an API now. But it's still in memory. This week, we make ServiceHub real by adding a database. Every customer, every work order, lives forever."</p>
+<p>"Your API works great. But as we add more features, dependency management gets complex. Today you'll master advanced DI patterns that make systems scalable and testable."</p>
 </blockquote>
-<p>Today, you'll set up <strong>EF Core</strong> and create ServiceHub's database schema.</p>
+<p>Today, you'll learn <strong>advanced DI patterns</strong>: lifetimes (Scoped, Transient, Singleton), factory patterns, and service hierarchies.</p>
 <hr />
-<h2 id="learning-objectives">Learning Objectives</h2>
-<ul>
-<li>Install and configure EF Core</li>
-<li>Create a DbContext for ServiceHub</li>
-<li>Define entities and relationships</li>
-<li>Run migrations to create the database</li>
-<li>Understand how ORM works</li>
-</ul>
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>Days 01-14 complete</li>
-<li>Comfortable with APIs and dependency injection</li>
-<li>~60 minutes</li>
-</ul>
-<hr />
-<h2 id="starter-steps">Starter Steps</h2>
+<h2 id="learning-objectives">🎯 Learning Objectives</h2>
 <ol>
-<li>Read the objectives above</li>
-<li>Open this folder in your editor</li>
-<li>Follow the TODOs to set up EF Core</li>
-<li>Run migrations and verify the database is created</li>
+<li><strong>Understand DI lifetimes:</strong> When and why to use Scoped, Transient, Singleton</li>
+<li><strong>Master factory patterns:</strong> Creating complex objects with DI</li>
+<li><strong>Build service hierarchies:</strong> Services that depend on services</li>
+<li><strong>Use decorators:</strong> Add behavior without modifying code</li>
+<li><strong>Configure advanced DI:</strong> Factory methods, conditional registration</li>
 </ol>
-<h2 id="why-this-matters-for-servicehub">Why This Matters for ServiceHub</h2>
-<p>Before today, ServiceHub's data lived in memory and disappeared on restart.</p>
-<p>After today:
-- Customers persist forever
-- Work orders are stored reliably
-- Relationships are enforced (a work order must have a customer)
-- The database is your source of truth</p>
-<p>This is the moment ServiceHub becomes real.</p>
 <hr />
-<h2 id="next">Next</h2>
-<p>Day 16: Build CRUD operations for customers and work orders.</p>
-<h2 id="boilerplate">Boilerplate</h2>
+<h2 id="prerequisites">📋 Prerequisites</h2>
+<p>Before you start:
+- Days 01-14 complete
+- Comfortable with DI from Day 08-14
+- Understand repository and service patterns
+- ~90 minutes</p>
+<hr />
+<h2 id="what-changed-since-day-14">What Changed Since Day 14</h2>
+<p>Day 14 had:</p>
+<pre><code>builder.Services.AddScoped&lt;ICustomerRepository, CustomerRepository&gt;();
+builder.Services.AddScoped&lt;CustomerService&gt;();
+</code></pre>
+<p>Day 15 adds:</p>
+<pre><code>// Lifetimes (new)
+builder.Services.AddSingleton&lt;IConfiguration&gt;();        // Once for app
+builder.Services.AddScoped&lt;UnitOfWork&gt;();               // Once per request
+builder.Services.AddTransient&lt;ValidationService&gt;();     // Every time
+
+// Factories (new)
+builder.Services.AddScoped&lt;IRepositoryFactory&gt;(sp =&gt;
+    new RepositoryFactory(sp.GetRequiredService&lt;DbContext&gt;()));
+
+// Decorators (new)
+builder.Services.Decorate&lt;ICustomerRepository, CachedCustomerRepository&gt;();
+
+// Conditional registration (new)
+if (environment.IsProduction())
+    builder.Services.AddScoped&lt;IEmailService, SmtpEmailService&gt;();
+else
+    builder.Services.AddScoped&lt;IEmailService, ConsoleEmailService&gt;();
+</code></pre>
+<hr />
+<h2 id="step-1-understand-di-lifetimes">Step 1: Understand DI Lifetimes</h2>
+<h3 id="transient-new-instance-every-time"><strong>Transient</strong> - New instance every time</h3>
+<pre><code class="language-csharp">builder.Services.AddTransient&lt;IValidator, CustomerValidator&gt;();
+
+// Usage:
+var validator1 = serviceProvider.GetService&lt;IValidator&gt;();
+var validator2 = serviceProvider.GetService&lt;IValidator&gt;();
+// validator1 != validator2 (different instances)
+</code></pre>
+<p><strong>When to use:</strong>
+- ✅ Stateless services
+- ✅ Lightweight objects
+- ✅ When fresh state needed
+- ❌ Not for expensive operations</p>
+<h3 id="scoped-one-per-request"><strong>Scoped</strong> - One per request</h3>
+<pre><code class="language-csharp">builder.Services.AddScoped&lt;ICustomerRepository, CustomerRepository&gt;();
+
+// In web app:
+// Request 1: Gets repository instance A
+// Request 2: Gets new repository instance B
+// Within request: Same instance used everywhere
+</code></pre>
+<p><strong>When to use:</strong>
+- ✅ Repositories (per-request data consistency)
+- ✅ Services (per-request business logic)
+- ✅ DbContext (per-request database)
+- ✅ Most of your services</p>
+<h3 id="singleton-one-for-entire-application-lifetime"><strong>Singleton</strong> - One for entire application lifetime</h3>
+<pre><code class="language-csharp">builder.Services.AddSingleton&lt;IMemoryCache, MemoryCache&gt;();
+
+// Same instance for all requests, entire app lifetime
+</code></pre>
+<p><strong>When to use:</strong>
+- ✅ Configuration
+- ✅ Caches (expensive to create)
+- ✅ Loggers
+- ✅ Expensive resources
+- ❌ NOT for stateful services
+- ❌ NOT for things that should per-request</p>
+<hr />
+<h2 id="step-2-factory-pattern">Step 2: Factory Pattern</h2>
+<p>Create complex objects:</p>
+<pre><code class="language-csharp">// Instead of:
+builder.Services.AddScoped&lt;IRepository, Repository&gt;();
+
+// Use factory:
+builder.Services.AddScoped&lt;IRepository&gt;(serviceProvider =&gt;
+{
+    var connectionString = serviceProvider
+        .GetRequiredService&lt;IConfiguration&gt;()
+        .GetConnectionString(&quot;Default&quot;);
+
+    var options = new RepositoryOptions { ConnectionString = connectionString };
+    return new Repository(options);
+});
+</code></pre>
+<p><strong>Benefits:</strong>
+- ✅ Complex initialization logic
+- ✅ Conditional registration
+- ✅ Dependency access during creation</p>
+<hr />
+<h2 id="step-3-service-hierarchies">Step 3: Service Hierarchies</h2>
+<p>Services depending on services:</p>
+<pre><code class="language-csharp">public class OrderService
+{
+    private readonly ICustomerRepository _customers;
+    private readonly IWorkOrderRepository _orders;
+    private readonly IEmailService _email;
+
+    public OrderService(
+        ICustomerRepository customers,
+        IWorkOrderRepository orders,
+        IEmailService email)
+    {
+        _customers = customers;
+        _orders = orders;
+        _email = email;
+    }
+
+    public async Task CreateOrderAsync(int customerId, string description)
+    {
+        var customer = await _customers.GetAsync(customerId);
+        var order = await _orders.CreateAsync(customerId, description);
+        await _email.SendAsync(customer.Email, $&quot;Order {order.Id} created&quot;);
+    }
+}
+
+// Register all:
+builder.Services.AddScoped&lt;ICustomerRepository, CustomerRepository&gt;();
+builder.Services.AddScoped&lt;IWorkOrderRepository, WorkOrderRepository&gt;();
+builder.Services.AddScoped&lt;IEmailService, EmailService&gt;();
+builder.Services.AddScoped&lt;OrderService&gt;();
+</code></pre>
+<hr />
+<h2 id="step-4-decorator-pattern">Step 4: Decorator Pattern</h2>
+<p>Add behavior without modifying code:</p>
+<pre><code class="language-csharp">// Original
+public interface ICustomerRepository
+{
+    Task&lt;Customer?&gt; GetAsync(int id);
+}
+
+// Decorator: Add caching
+public class CachedCustomerRepository : ICustomerRepository
+{
+    private readonly ICustomerRepository _inner;
+    private readonly IMemoryCache _cache;
+
+    public CachedCustomerRepository(ICustomerRepository inner, IMemoryCache cache)
+    {
+        _inner = inner;
+        _cache = cache;
+    }
+
+    public async Task&lt;Customer?&gt; GetAsync(int id)
+    {
+        if (_cache.TryGetValue($&quot;customer_{id}&quot;, out Customer? cached))
+            return cached;
+
+        var customer = await _inner.GetAsync(id);
+        if (customer != null)
+            _cache.Set($&quot;customer_{id}&quot;, customer, TimeSpan.FromMinutes(10));
+
+        return customer;
+    }
+}
+
+// Extension to wrap easily
+public static class ServiceCollectionExtensions
+{
+    public static IServiceCollection Decorate&lt;TInterface, TDecorator&gt;(
+        this IServiceCollection services)
+        where TInterface : class
+        where TDecorator : class, TInterface
+    {
+        // Implementation here
+        return services;
+    }
+}
+</code></pre>
+<hr />
+<h2 id="step-5-mini-challenge">Step 5: Mini Challenge</h2>
+<p><strong>Refactor your Day 14 API to add:</strong></p>
+<ol>
+<li><strong>Lifetimes:</strong> Use appropriate lifetimes for your services</li>
+<li><strong>Factories:</strong> Create a factory for complex service initialization</li>
+<li><strong>Service hierarchy:</strong> Create an <code>OrderService</code> that uses both Customer and WorkOrder repos</li>
+<li><strong>Decorators:</strong> Add logging decorator to repositories</li>
+<li><strong>Conditional registration:</strong> Different email service for dev vs production</li>
+</ol>
+<hr />
+<h2 id="checklist">✅ Checklist</h2>
 <ul>
-<li>This folder contains minimal code and instructions to get started.</li>
-<li>Do not commit build artifacts; keep only source and instructions.</li>
+<li>[ ] Understand lifetimes (Transient, Scoped, Singleton)</li>
+<li>[ ] Create services with appropriate lifetimes</li>
+<li>[ ] Use factory pattern for complex services</li>
+<li>[ ] Build service hierarchies</li>
+<li>[ ] Implement decorator pattern</li>
+<li>[ ] Do conditional registration based on environment</li>
+<li>[ ] Code compiles without errors</li>
+<li>[ ] Tested that DI resolves correctly</li>
+<li>[ ] Compared to Day 15 Complete example</li>
 </ul>
+<hr />
+<h2 id="next-steps">🔗 Next Steps</h2>
+<p>Day 16: <strong>Configuration &amp; Options Pattern</strong> — Manage settings professionally.</p>
+<hr />
+<h2 id="resources">📚 Resources</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/dotnet/core/dependency-injection" target="_blank">Microsoft DI Documentation</a></li>
+<li><a href="https://docs.microsoft.com/dotnet/core/dependency-injection/dependency-injection-guidelines" target="_blank">DI Best Practices</a></li>
+</ul>
+<hr />
+<p><strong>Your API is about to get smarter.</strong> See you on Day 16! 🚀</p>
 
 
 
