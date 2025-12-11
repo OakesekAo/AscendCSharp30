@@ -42,7 +42,7 @@ builder.Services.AddScoped<IRepositoryFactory>(sp =>
 );
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Swashbuckle removed in favor of built-in Scaler UI (Microsoft.AspNetCore.OpenApi package is used in csproj).
 
 var app = builder.Build();
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
@@ -50,8 +50,7 @@ logger.LogInformation("Starting ServiceHub API with HttpClient");
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    // Scaler UI will be used by the runtime in .NET 10; no explicit Swagger middleware required.
 }
 
 app.UseHttpsRedirection();

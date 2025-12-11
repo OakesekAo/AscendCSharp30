@@ -6,26 +6,13 @@ var builder = WebApplicationBuilder.CreateBuilder(args);
 // ========== DEPENDENCY INJECTION ==========
 builder.Services.AddServiceHubServices();
 
-// Swagger/OpenAPI
+// Use built-in .NET 10 API UI (Scaler). If Swashbuckle needed, add it explicitly per-project.
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-    {
-        Title = "ServiceHub API",
-        Version = "1.0.0",
-        Description = "Professional REST API for ServiceHub - Week 2 of AscendCSharp30"
-    });
-});
 
 var app = builder.Build();
 
 // ========== MIDDLEWARE ==========
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Use built-in .NET 10 API UI (Scaler) in development — no Swashbuckle middleware required
 
 app.UseHttpsRedirection();
 

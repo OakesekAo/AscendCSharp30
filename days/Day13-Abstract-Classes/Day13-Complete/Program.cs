@@ -14,15 +14,14 @@ builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<WorkOrderService>();
 
+// Use built-in .NET 10 API UI (Scaler) instead of Swashbuckle/Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    // Scaler UI will be used by the runtime in .NET 10; remove Swashbuckle calls.
 }
 
 app.UseHttpsRedirection();

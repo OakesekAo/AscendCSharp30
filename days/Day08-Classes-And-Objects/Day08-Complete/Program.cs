@@ -1,6 +1,7 @@
 using ServiceHub.Day08.Data;
 using ServiceHub.Day08.Repositories;
 using ServiceHub.Day08.Services;
+using Scalar.AspNetCore;
 
 // Day 08 — Dependency Injection Foundations
 // Building the ServiceHub API starting with DI + basic endpoints
@@ -15,18 +16,16 @@ builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<WorkOrderService>();
 
-// Swagger for documentation
+// Use Scalar UI for API documentation
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 // ========== MIDDLEWARE ==========
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Map Scalar UI at root and OpenAPI schema
+app.MapOpenApi();
+app.MapScalarApiReference();
 
 app.UseHttpsRedirection();
 
@@ -63,6 +62,10 @@ app.MapPost("/customers", async (CreateCustomerRequest request, CustomerService 
     return Results.Created($"/customers/{customer.Id}", customer);
 })
 .WithName("CreateCustomer")
+.WithDescription("Create a new customer with name and email")
+.Accepts<CreateCustomerRequest>("application/json")
+.Produces(StatusCodes.Status201Created)
+.Produces(StatusCodes.Status400BadRequest)
 .WithOpenApi();
 
 // Work Orders
@@ -91,6 +94,10 @@ app.MapPost("/workorders", async (CreateWorkOrderRequest request, WorkOrderServi
     return Results.Created($"/workorders/{order.Id}", order);
 })
 .WithName("CreateWorkOrder")
+.WithDescription("Create a new work order for a customer")
+.Accepts<CreateWorkOrderRequest>("application/json")
+.Produces(StatusCodes.Status201Created)
+.Produces(StatusCodes.Status400BadRequest)
 .WithOpenApi();
 
 app.Run();

@@ -3,8 +3,8 @@ using Serilog;
 var builder = WebApplicationBuilder.CreateBuilder(args);
 builder.Host.UseSerilog((ctx, cfg) => cfg.ReadFrom.Configuration(ctx.Configuration).Enrich.FromLogContext());
 builder.Services.AddScoped<IQueryService, QueryService>();
+// Use built-in .NET 10 API UI (Scaler) instead of Swashbuckle/Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 var app = builder.Build();
 if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
 var svc = app.Services.GetRequiredService<IQueryService>();

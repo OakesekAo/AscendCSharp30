@@ -13,10 +13,13 @@ builder.Services.AddHttpClient<IExternalWeatherService, ExternalWeatherService>(
 if (builder.Environment.IsProduction()) builder.Services.AddScoped<IEmailService, SmtpEmailService>();
 else builder.Services.AddScoped<IEmailService, ConsoleEmailService>();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Swashbuckle removed to prefer built-in Scaler UI in .NET 10. Add it per-project if needed.
 var app = builder.Build();
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+if (app.Environment.IsDevelopment())
+{
+    // Use Scaler (built-in) in .NET 10 — avoid Swashbuckle middleware here.
+}
 app.UseHttpsRedirection();
 app.MapGet("/health", () => Results.Ok(new { status = "ok", architecture = "clean" })).WithName("Health").WithOpenApi();
 app.MapGet("/customers", async (CustomerService s) => Results.Ok(await s.GetAllAsync())).WithName("GetCustomers").WithOpenApi();

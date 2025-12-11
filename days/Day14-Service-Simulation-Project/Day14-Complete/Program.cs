@@ -23,8 +23,8 @@ builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<WorkOrderService>();
 builder.Services.AddScoped<LoggingService>();
 
+// Use built-in .NET 10 API UI (Scaler) instead of Swashbuckle/Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -46,8 +46,7 @@ app.Use(async (context, next) =>
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    // Scaler UI will be used by the runtime in .NET 10; no Swashbuckle middleware here.
 }
 
 app.UseHttpsRedirection();

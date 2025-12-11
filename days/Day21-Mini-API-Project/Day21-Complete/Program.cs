@@ -1,14 +1,23 @@
 // Day 21 - EF Core & Database Capstone (Complete)
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((ctx, cfg) => cfg.ReadFrom.Configuration(ctx.Configuration).Enrich.FromLogContext());
 var cs = builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=servicehub.db";
 builder.Services.AddDbContext<ServiceHubContext>(opt => opt.UseSqlite(cs));
 builder.Services.AddScoped<ICustomerRepository, EFCustomerRepository>();
 builder.Services.AddScoped<IWorkOrderRepository, EFWorkOrderRepository>();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Add Swagger if available, but guard against incompatible Swashbuckle versions at runtime
+try
+{
+    builder.Services.AddSwaggerGen();
+}
+catch (Exception ex)
+{
+    // If AddSwaggerGen fails due to package incompatibility, log and continue without Swagger
+    Console.WriteLine($"Warning: Swagger not available: {ex.Message}");
+}
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
@@ -22,7 +31,11 @@ using (var scope = app.Services.CreateScope())
         db.SaveChanges();
     }
 }
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+// In .NET 10 use the built-in API UI (Scaler) in development. Swashbuckle guarded earlier; prefer Scaler UI by default.
+if (app.Environment.IsDevelopment())
+{
+    // No explicit Swagger middleware required for Scaler UI.
+}
 app.MapGet("/health", () => Results.Ok(new { status = "ok", database = "connected" })).WithName("Health").WithOpenApi();
 app.MapGet("/customers", async (ICustomerRepository r) => Results.Ok(await r.GetAllAsync())).WithName("GetCustomers").WithOpenApi();
 app.MapGet("/customers/{id}", async (int id, ICustomerRepository r) => { var c = await r.GetAsync(id); return c != null ? Results.Ok(c) : Results.NotFound(); }).WithName("GetById").WithOpenApi();

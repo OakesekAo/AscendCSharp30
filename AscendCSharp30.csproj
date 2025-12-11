@@ -12,6 +12,21 @@
     <None Include="days\Day10-Inheritance-And-Polymorphism\Day10-Complete\Day10-Complete.csproj" />
     <None Include="days\Day11-Polymorphism-Advanced\Day11-Complete\Day11-Complete.csproj" />
     <None Include="days\Day12-Encapsulation\Day12-Complete\Day12-Complete.csproj" />
+    <None Include="days\Day13-Abstract-Classes\Day13-Complete\Day13-Complete.csproj" />
+    <None Include="days\Day14-Service-Simulation-Project\Day14-Complete\Day14-Complete.csproj" />
+    <None Include="days\Day15-Dependency-Injection\Day15-Complete\Day15-Complete.csproj" />
+    <None Include="days\Day16-Options-Pattern-And-Config\Day16-Complete\Day16-Complete.csproj" />
+    <None Include="days\Day17-Logging\Day17-Complete\Day17-Complete.csproj" />
+    <None Include="days\Day18-HttpClient\Day18-Complete\Day18-Complete.csproj" />
+    <None Include="days\Day19-Clean-Architecture\Day19-Complete\Day19-Complete.csproj" />
+    <None Include="days\Day20-Advanced-LINQ\Day20-Complete\Day20-Complete.csproj" />
+    <None Include="days\Day21-Mini-API-Project\Day21-Complete\Day21-Complete.csproj" />
+    <None Include="days\Day22-Unit-Testing\Day22-Complete\Day22-Complete.csproj" />
+    <None Include="days\Day23-Advanced-EF-Core\Day23-Complete\Day23-Complete.csproj" />
+    <None Include="days\Day24-API-Integration\Day24-Complete\Day24-Complete.csproj" />
+    <None Include="days\Day25-Blazor-Components\Day25-Complete\Day25-Complete.csproj" />
+    <None Include="days\Day26-Authentication\Day26-Complete\Day26-Complete.csproj" />
+    <None Include="EndpointTests\EndpointTests.csproj" />
     <None Include="ServiceHub.API\ServiceHub.API.csproj" />
   </ItemGroup>
 

@@ -47,7 +47,7 @@ builder.Services.AddScoped<IRepositoryFactory>(sp =>
 );
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Swashbuckle removed to prefer built-in Scaler UI in .NET 10. If advanced OpenAPI features are required add Swashbuckle explicitly.
 
 var app = builder.Build();
 

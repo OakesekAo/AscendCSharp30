@@ -1,5 +1,9 @@
 # Day 08 — Dependency Injection Foundations (Complete)
 
+## 🎯 Project Status: Running with Scalar UI
+
+**Updated Dec 2025:** Migrated from Swagger/Swashbuckle to built-in .NET 10 Scalar UI for OpenAPI documentation.
+
 ## 🎯 What This Code Shows
 
 This is the **complete, working implementation** of Day 08's concept: **building a web API with proper Dependency Injection**.
